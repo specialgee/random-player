@@ -163,33 +163,15 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-12">
-              <div className="embed-responsive embed-responsive-16by9">
+            <div className="embed-responsive embed-responsive-16by9">
               <VideoPlayer />
-                  <iframe
-                    className="random-video"
-                    title="yt-video"
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/9eJsDDvpwmE?rel=0&autoplay=1&controls=0&iv_load_policy=3&modestbranding"
-                    frameBorder="0"
-                    allowFullScreen>
-                  </iframe>
-                </div>
-              </div>
-              <ul className="nav nav-pills nav-fill"></ul>
-              <div className="random-button">
-                <p>
-                  <img src={music} width="178" height="33" alt=""/>
-                  <img src={rap} width="178" height="33" alt=""/>
-                  <img src={skate} width="178" height="33" alt=""/>
-                </p>
-	              <p>
-                  {/* <a className="nav-link" href="./">
-                    <img src={random} width="250" height="140" alt=""/>
-                  </a> */}
-                  <RandomLink />
-                </p>
-              </div>
+            </div>
+            <div>
+              <img src={music} width="178" height="33" alt=""/>
+              <img src={rap} width="178" height="33" alt=""/>
+              <img src={skate} width="178" height="33" alt=""/>
+            </div>
+	              
           </div>
         </div>
       </div>
