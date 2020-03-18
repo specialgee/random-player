@@ -117,7 +117,7 @@ function App() {
         <div className="row">
           <div className="col-12">
               <div className="embed-responsive embed-responsive-16by9">
-                <div id="video-container">
+              <VideoPlayer />
                   <iframe
                     className="random-video"
                     title="yt-video"
