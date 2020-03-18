@@ -38,13 +38,37 @@ function setRandomId() {
 //     e.preventDefault();
 //     console.log('The link was clicked.');
 //   }
+class RandomButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    console.log('Click happened');
+  }
+  componentDidMount() {
 
-//   return (
-//     <a href="#" onClick={handleClick}>
-//       Click me
-//     </a>
-//   );
-// }
+  }
+  componentWillUnmount() {
+    
+  }
+  render() {
+    return (
+      <div id="video-button-container">
+        <button id="video-button" className="video-button nav-link" onClick={this.props.onClick}>
+          <img src={random} width="250" height="140" alt=""/>
+        </button>
+      </div>
+    );
+    // return ReactDOM.createPortal(
+    //   <button className="video-button nav-link" onClick={this.props.onClick}>
+    //     <img src={random} width="250" height="140" alt=""/>
+    //   </button>,
+    //   document.getElementById("portal-root")
+    // );
+  }
+}
+
 class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
