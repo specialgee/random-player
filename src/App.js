@@ -44,12 +44,43 @@ function setRandomId() {
 //     </a>
 //   );
 // }
+class VideoPlayer extends React.Component {
+  constructor(props) {
+    super(props);
 
-function RandomLink() {
-  let ids=["9eJsDDvpwmE", "nqOTVuG1GPI", "ATypSV5c8hU"];
+    this.state = {
+      videoId: "9eJsDDvpwmE",
+      player: null,
+    };
 
-  function handleClick(e) {
-    e.preventDefault();
+    this.onReady = this.onReady.bind(this);
+    this.onEnd = this.onEnd.bind(this);
+    this.onRandomVideo = this.onRandomVideo.bind(this);
+    this.onPlayVideo = this.onPlayVideo.bind(this);
+    this.onPauseVideo = this.onPauseVideo.bind(this);
+  }
+
+  onReady(event) {
+    console.log(`YouTube Player object for videoId: "${this.state.videoId}" has been saved to state.`); // eslint-disable-line
+    this.setState({
+      player: event.target,
+    });
+  }
+
+  onEnd(event) {
+    // this.setState({
+    //   player: event.target,
+    // });
+    this.onRandomVideo();
+  }
+
+  onPlayVideo() {
+    this.state.player.playVideo();
+  }
+
+  onPauseVideo() {
+    this.state.player.pauseVideo();
+  }
 
     let index;
     do {
@@ -58,11 +89,19 @@ function RandomLink() {
     RandomLink.last = index;
     console.log(index);
 
-    let randomVideo = document.getElementsByClassName("random-video");
-    randomVideo[0].src = "https://www.youtube.com/embed/" + ids[index] + "?rel=0&autoplay=1&controls=0&iv_load_policy=3&modestbranding";
-    randomVideo[0].allow = "autoplay";
-    document.getElementById("video-container").innerHTML = document.getElementById("video-container").innerHTML;
-  }
+  render() {
+    const opts = {
+      width: "60",
+      height: "315",
+      playerVars: {
+        rel: 0,
+        autoplay: 0,
+        controls: 1,
+        iv_load_policy: 3,
+        modestbranding: 1
+      },
+      frameBorder: "0"
+    }
 
   return (
     <a className="nav-link" href="./" onClick={handleClick}>
