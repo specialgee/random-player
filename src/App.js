@@ -5,14 +5,17 @@ import  rap from './assets/img/BtnRAPFRANCAISover.jpg';
 import  skate from './assets/img/BtnSkateHome.jpg';
 import  random from './assets/img/gKKKK.gif';
 
-// class Toggle extends React.Component {
+let ids=["9eJsDDvpwmE", "nqOTVuG1GPI", "ATypSV5c8hU"];
 //   constructor(props) {
 //     super(props);
 //     this.state = {isToggleOn: true};
 
-//     // This binding is necessary to make `this` work in the callback
-//     this.handleClick = this.handleClick.bind(this);
-//   }
+function setRandomId() {
+  let index;
+  
+  do {
+    index = Math.floor(Math.random() * ids.length);
+  } while (index === setRandomId.last);
 
 //   handleClick() {
 //     this.setState(state => ({
