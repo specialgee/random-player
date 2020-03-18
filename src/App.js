@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import YouTube from 'react-youtube';
 import './App.css';
 import  music from './assets/img/BtnMusicHome.jpg';
@@ -7,9 +8,6 @@ import  skate from './assets/img/BtnSkateHome.jpg';
 import  random from './assets/img/gKKKK.gif';
 
 let ids=["9eJsDDvpwmE", "nqOTVuG1GPI", "ATypSV5c8hU"];
-//   constructor(props) {
-//     super(props);
-//     this.state = {isToggleOn: true};
 
 function setRandomId() {
   let index;
@@ -17,27 +15,32 @@ function setRandomId() {
   do {
     index = Math.floor(Math.random() * ids.length);
   } while (index === setRandomId.last);
-
+  
   setRandomId.last = index;
   console.log(index);
-//       isToggleOn: !state.isToggleOn
-//     }));
-//   }
 
   return ids[index];
 }
-//       <button onClick={this.handleClick}>
-//         {this.state.isToggleOn ? 'ON' : 'OFF'}
-//       </button>
-//     );
-//   }
-// }
 
-// function ActionLink() {
-//   function handleClick(e) {
-//     e.preventDefault();
-//     console.log('The link was clicked.');
-//   }
+class ButtonPortal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.button = document.getElementById("portal-root");
+  }
+  componentDidMount() {
+  
+  }
+  componentWillUnmount() {
+    
+  }
+  render() {
+    return ReactDOM.createPortal(
+      this.props.children,
+      this.button
+    );
+  }
+}
+
 class RandomButton extends React.Component {
   constructor(props) {
     super(props);
@@ -139,11 +142,19 @@ class VideoPlayer extends React.Component {
       frameBorder: "0"
     }
 
-  return (
-    <a className="nav-link" href="./" onClick={handleClick}>
-      <img src={random} width="250" height="140" alt=""/>
-    </a>
-  );
+    return (
+      <div id="video-player">
+        <YouTube videoId={this.state.videoId} className="random-video" opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
+        {/* <div id="video-controls">
+          <button onClick={this.onPlayVideo}>Play</button>
+          <button onClick={this.onPauseVideo}>Pause</button>
+        </div> */}
+        <ButtonPortal>
+          <RandomButton onClick={this.onRandomVideo} />
+        </ButtonPortal>
+      </div>
+    );
+  }
 }
 
 function App() {
