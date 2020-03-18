@@ -48,8 +48,11 @@ function RandomLink() {
   function handleClick(e) {
     e.preventDefault();
 
-
-    let  index = Math.floor(Math.random() * ids.length);
+    let index;
+    do {
+      index = Math.floor(Math.random() * ids.length);
+    } while (index === RandomLink.last);
+    RandomLink.last = index;
     console.log(index);
 
     let randomVideo = document.getElementsByClassName("random-video");
