@@ -24,7 +24,7 @@ function setRandomId() {
 //     }));
 //   }
 
-//   render() {
+  return ids[index];
 }
 //       <button onClick={this.handleClick}>
 //         {this.state.isToggleOn ? 'ON' : 'OFF'}
