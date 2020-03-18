@@ -17,14 +17,14 @@ function setRandomId() {
     index = Math.floor(Math.random() * ids.length);
   } while (index === setRandomId.last);
 
-//   handleClick() {
-//     this.setState(state => ({
+  setRandomId.last = index;
+  console.log(index);
 //       isToggleOn: !state.isToggleOn
 //     }));
 //   }
 
 //   render() {
-//     return (
+}
 //       <button onClick={this.handleClick}>
 //         {this.state.isToggleOn ? 'ON' : 'OFF'}
 //       </button>
