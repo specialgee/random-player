@@ -57,7 +57,7 @@ function RandomLink() {
 
     let randomVideo = document.getElementsByClassName("random-video");
     randomVideo[0].src = "https://www.youtube.com/embed/" + ids[index] + "?rel=0&autoplay=1&controls=0&iv_load_policy=3&modestbranding";
-    
+    randomVideo[0].allow = "autoplay";
     document.getElementById("video-container").innerHTML = document.getElementById("video-container").innerHTML;
   }
 
