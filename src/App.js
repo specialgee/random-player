@@ -82,12 +82,23 @@ class VideoPlayer extends React.Component {
     this.state.player.pauseVideo();
   }
 
-    let index;
-    do {
-      index = Math.floor(Math.random() * ids.length);
-    } while (index === RandomLink.last);
-    RandomLink.last = index;
-    console.log(index);
+  onRandomVideo() {
+    new Promise((resolve, reject) => {
+      resolve();
+    }).then(() => {
+      //use `.then()` to do something after `resolve()` has been called
+      this.setState({
+        videoId: setRandomId()
+      });
+    }).then(() => {
+      //use `.then()` to do something after `resolve()` has been called
+      this.state.player.playVideo();
+    }).catch(() => {
+      //use `.catch()` to do something after `reject()` has been called
+    }).finally(() => {
+      //use `.finally()` to do something either way
+    });
+  }
 
   render() {
     const opts = {
