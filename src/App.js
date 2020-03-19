@@ -10,14 +10,16 @@ import  random from './assets/img/gKKKK.gif';
 
 let ids=["9eJsDDvpwmE", "nqOTVuG1GPI", "ATypSV5c8hU"];
 
-function setRandomId() {
+console.log("data: ", data);
+
+function setRandomIdNoRepeat() {
   let index;
   
   do {
     index = Math.floor(Math.random() * ids.length);
-  } while (index === setRandomId.last);
+  } while (index === setRandomIdNoRepeat.last);
   
-  setRandomId.last = index;
+  setRandomIdNoRepeat.last = index;
   console.log(index);
 
   return ids[index];
