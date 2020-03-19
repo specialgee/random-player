@@ -339,7 +339,7 @@ class VideoPlayer extends React.Component {
       height: "315",
       playerVars: {
         rel: 0,
-        autoplay: 0,
+        autoplay: 1,
         controls: 0,
         iv_load_policy: 3,
         modestbranding: 1
