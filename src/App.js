@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import YouTube from 'react-youtube';
 import './App.css';
-import data from './assets/data/data.json'; 
+//import data from './assets/data/data.json'; 
 import  music from './assets/img/button-music.jpg';
 import  musicActive from './assets/img/button-music-active.jpg';
 import  rap from './assets/img/button-rap.jpg';
@@ -11,7 +11,14 @@ import  skate from './assets/img/button-skate.jpg';
 import  skateActive from './assets/img/button-skate-active.jpg';
 import  random from './assets/img/quarantine.gif';
 
-console.log("data: ", data);
+// fetch('data.json')
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//     // continue and do something here
+// });
+
+let data;
 
 let category = "rap";
 
@@ -358,20 +365,24 @@ class VideoPlayer extends React.Component {
   }
 }
 
-function App() {
-  return (
-    <div className="App">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <VideoPlayer />;
-            
+class App extends React.Component {
+  render() {
+    data = JSON.parse(this.props.appData);
+    console.log(data);
+    return (
+      <div className="App">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <VideoPlayer />;
+              
+            </div>
           </div>
         </div>
+        
       </div>
-      
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
