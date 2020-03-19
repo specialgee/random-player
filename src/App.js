@@ -248,15 +248,30 @@ class VideoPlayer extends React.Component {
 
   onRandomVideo() {
     let randomData = setRandomId();
+
     new Promise((resolve, reject) => {
       resolve();
     }).then(() => {
       //use `.then()` to do something after `resolve()` has been called
+      let categoryImages = document.getElementById("category-container").childNodes;
+      
+      categoryImages.forEach(element => {
+        // remove active status
+        if (element.classList.contains("category-active")) {
+          element.classList.remove("category-active")
+        }
+        // check category name and add active status
+        if (element.id === ("category-" + randomData.category)) {
+          element.classList.add("category-active")
+        }
+        console.log(element);
+      });
+
+    }).then(() => {
       this.setState({
         videoId: randomData.id
       });
     }).then(() => {
-      //use `.then()` to do something after `resolve()` has been called
       this.state.player.playVideo();
     }).catch(() => {
       //use `.catch()` to do something after `reject()` has been called
@@ -303,10 +318,10 @@ function App() {
             <div className="embed-responsive embed-responsive-16by9">
               <VideoPlayer />
             </div>
-            <div>
-              <img src={music} width="178" height="33" alt=""/>
-              <img src={rap} width="178" height="33" alt=""/>
-              <img src={skate} width="178" height="33" alt=""/>
+            <div id="category-container">
+              <img id="category-music" className="category-image" src={music} width="178" height="33" alt=""/>
+              <img id="category-rap" className="category-image category-active" src={rap} width="178" height="33" alt=""/>
+              <img id="category-skate" className="category-image" src={skate} width="178" height="33" alt=""/>
             </div>
 	              
           </div>
