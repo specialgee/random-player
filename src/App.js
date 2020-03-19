@@ -25,6 +25,22 @@ function setRandomIdNoRepeat() {
   return ids[index];
 }
 
+function shuffleId(array) {
+  // set random id using Fisher-Yates shuffle
+  // see Mike Bostock article: https://bost.ocks.org/mike/shuffle/
+  let i = array.length;
+  let j, t;
+
+  while (i) {
+    j = Math.floor(Math.random() * i--);
+    t = array[i];
+    array[i] = array[j];
+    array[j] = t; 
+  }
+  console.log("shuffle: ", array);
+  return array;
+}
+
 function setCategoryIdPromise() {
   let categoryName;
   let categoryIndex;
