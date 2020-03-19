@@ -25,6 +25,23 @@ function setRandomIdNoRepeat() {
   return ids[index];
 }
 
+function setCategoryIdPromise() {
+  let categoryName;
+  let categoryIndex;
+  const categoryLength = Object.keys(data.category).length;
+
+  new Promise((resolve, reject) => {
+    resolve();
+  }).then(() => {
+    categoryIndex = Math.floor(Math.random() * categoryLength);
+    console.log("categoryIndex: ", categoryIndex);
+  }).catch(() => {
+    
+  }).finally(() => {
+    
+  });
+}
+
 class ButtonPortal extends React.Component {
   constructor(props) {
     super(props);
