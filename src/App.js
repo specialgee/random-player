@@ -7,14 +7,13 @@ import  rap from './assets/img/button-rap.jpg';
 import  rapActive from './assets/img/button-rap-active.jpg';
 import  skate from './assets/img/button-skate.jpg';
 import  skateActive from './assets/img/button-skate-active.jpg';
-import  random from './assets/img/quarantine.gif';
+import  nextButtonImage from './assets/img/button-next.gif';
 
 let data;
 let category = "rap";
 
 function setCategory(e) {
   category = e.target.id.substring(9);
-  console.log(category);
 
   setActive(e);
 }
@@ -167,7 +166,7 @@ class RandomButton extends React.Component {
     return (
       <div id="video-button-container">
         <button id="video-button" className="video-button" onClick={this.props.onClick}>
-          <img src={random} width="250" height="140" alt=""/>
+          <img src={nextButtonImage} width="164" height="80" alt=""/>
         </button>
       </div>
     );

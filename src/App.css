@@ -22,6 +22,10 @@
 }
 */
 
+#video-button-container {
+  margin-top: 20px;
+}
+
 #video-button {
   background: black;
   border: 0;
