@@ -238,7 +238,7 @@ class RandomButton extends React.Component {
   render() {
     return (
       <div id="video-button-container">
-        <button id="video-button" className="video-button nav-link" onClick={this.props.onClick}>
+        <button id="video-button" className="video-button" onClick={this.props.onClick}>
           <img src={random} width="250" height="140" alt=""/>
         </button>
       </div>
