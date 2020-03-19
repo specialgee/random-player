@@ -53,7 +53,7 @@ function setRandomId() {
   // } while (categoryIndex === setRandomId.lastCategoryIndex);
   // setRandomId.lastCategoryIndex = categoryIndex;
   
-  console.log("categoryIndex: ", categoryIndex);
+  //console.log("categoryIndex: ", categoryIndex);
 
   // set category name
   let categoryName;
@@ -105,41 +105,51 @@ function setRandomId() {
   return videoId;
 }
 
-function setCategoryIdPromise() {
-  let categoryName;
-  let categoryIndex;
-  const categoryLength = Object.keys(data.category).length;
-
-  new Promise((resolve, reject) => {
-    resolve();
-  }).then(() => {
-    categoryIndex = Math.floor(Math.random() * categoryLength);
-    console.log("categoryIndex: ", categoryIndex);
-  }).catch(() => {
-    
-  }).finally(() => {
-    
-  });
-}
-
-class ButtonPortal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.button = document.getElementById("portal-root");
-  }
-  componentDidMount() {
+// function setRandomIdNoRepeat() {
+//   let index;
   
+//   do {
+//     index = Math.floor(Math.random() * ids.length);
+//   } while (index === setRandomIdNoRepeat.last);
+  
+//   setRandomIdNoRepeat.last = index;
+//   console.log(index);
+
+//   return ids[index];
+// }
+
+function shuffleId(array) {
+  // set random id using Fisher-Yates shuffle
+  // see Mike Bostock article: https://bost.ocks.org/mike/shuffle/
+  let i = array.length;
+  let j, t;
+
+  while (i) {
+    j = Math.floor(Math.random() * i--);
+    t = array[i];
+    array[i] = array[j];
+    array[j] = t; 
   }
-  componentWillUnmount() {
-    
-  }
-  render() {
-    return ReactDOM.createPortal(
-      this.props.children,
-      this.button
-    );
-  }
+  //console.log("shuffle: ", array);
+  return array;
 }
+
+// function setCategoryIdPromise() {
+//   let categoryName;
+//   let categoryIndex;
+//   const categoryLength = Object.keys(data.category).length;
+
+//   new Promise((resolve, reject) => {
+//     resolve();
+//   }).then(() => {
+//     categoryIndex = Math.floor(Math.random() * categoryLength);
+//     console.log("categoryIndex: ", categoryIndex);
+//   }).catch(() => {
+    
+//   }).finally(() => {
+    
+//   });
+// }
 
 class RandomButton extends React.Component {
   constructor(props) {
@@ -169,6 +179,25 @@ class RandomButton extends React.Component {
     //   </button>,
     //   document.getElementById("portal-root")
     // );
+  }
+}
+
+class ButtonPortal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.button = document.getElementById("portal-root");
+  }
+  componentDidMount() {
+  
+  }
+  componentWillUnmount() {
+    
+  }
+  render() {
+    return ReactDOM.createPortal(
+      this.props.children,
+      this.button
+    );
   }
 }
 
