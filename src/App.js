@@ -3,43 +3,14 @@ import ReactDOM from 'react-dom';
 import YouTube from 'react-youtube';
 import './App.css';
 import data from './assets/data/data.json'; 
-import  music from './assets/img/BtnMusicHome.jpg';
-import  rap from './assets/img/BtnRAPFRANCAISover.jpg';
-import  skate from './assets/img/BtnSkateHome.jpg';
-import  random from './assets/img/gKKKK.gif';
+import  music from './assets/img/button-music.jpg';
+import  rap from './assets/img/button-rap-active.jpg';
+import  skate from './assets/img/button-skate.jpg';
+import  random from './assets/img/quarantine.gif';
 
 let ids=["9eJsDDvpwmE", "nqOTVuG1GPI", "ATypSV5c8hU"];
 
 console.log("data: ", data);
-
-function setRandomIdNoRepeat() {
-  let index;
-  
-  do {
-    index = Math.floor(Math.random() * ids.length);
-  } while (index === setRandomIdNoRepeat.last);
-  
-  setRandomIdNoRepeat.last = index;
-  console.log(index);
-
-  return ids[index];
-}
-
-function shuffleId(array) {
-  // set random id using Fisher-Yates shuffle
-  // see Mike Bostock article: https://bost.ocks.org/mike/shuffle/
-  let i = array.length;
-  let j, t;
-
-  while (i) {
-    j = Math.floor(Math.random() * i--);
-    t = array[i];
-    array[i] = array[j];
-    array[j] = t; 
-  }
-  console.log("shuffle: ", array);
-  return array;
-}
 
 function setRandomId() {
   // set category index
