@@ -358,15 +358,18 @@ class VideoPlayer extends React.Component {
     }
 
     return (
-      <div id="video-player">
-        <YouTube videoId={this.state.videoId} className="random-video" opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
-        {/* <div id="video-controls">
-          <button onClick={this.onPlayVideo}>Play</button>
-          <button onClick={this.onPauseVideo}>Pause</button>
-        </div> */}
-        <ButtonPortal>
+      <div id="video-wrapper">
+        <div className="embed-responsive embed-responsive-16by9">
+          <div id="video-player">
+            <YouTube videoId={this.state.videoId} className="random-video" opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
+          </div>
+        </div>
+        <div id="category-container">
+          <img id="category-music" className="category-image" onClick={setCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={music} width="178" height="33" alt=""/>
+          <img id="category-rap" className="category-image category-active" onClick={setCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapActive} width="178" height="33" alt=""/>
+          <img id="category-skate" className="category-image" onClick={setCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skate} width="178" height="33" alt=""/>
           <RandomButton onClick={this.onRandomVideo} />
-        </ButtonPortal>
+        </div>
       </div>
     );
   }
@@ -378,18 +381,12 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="embed-responsive embed-responsive-16by9">
-              <VideoPlayer />
-            </div>
-            <div id="category-container">
-              <img id="category-music" className="category-image" src={music} width="178" height="33" alt=""/>
-              <img id="category-rap" className="category-image category-active" src={rap} width="178" height="33" alt=""/>
-              <img id="category-skate" className="category-image" src={skate} width="178" height="33" alt=""/>
-            </div>
-	              
+            <VideoPlayer />;
+            
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
