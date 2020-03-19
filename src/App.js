@@ -1,8 +1,6 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import YouTube from 'react-youtube';
 import './App.css';
-//import data from './assets/data/data.json'; 
 import  music from './assets/img/button-music.jpg';
 import  musicActive from './assets/img/button-music-active.jpg';
 import  rap from './assets/img/button-rap.jpg';
@@ -11,15 +9,7 @@ import  skate from './assets/img/button-skate.jpg';
 import  skateActive from './assets/img/button-skate-active.jpg';
 import  random from './assets/img/quarantine.gif';
 
-// fetch('data.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     // continue and do something here
-// });
-
 let data;
-
 let category = "rap";
 
 function setCategory(e) {
@@ -107,54 +97,15 @@ function handleMouseOut(e) {
 }
 
 function setRandomId() {
-  /*
-  // set category index
-  let categoryIndex;
-  const categoryLength = Object.keys(data.category).length;
-
-  categoryIndex = Math.floor(Math.random() * categoryLength);
-
-  // do {
-  //   categoryIndex = Math.floor(Math.random() * categoryLength);
-  // } while (categoryIndex === setRandomId.lastCategoryIndex);
-  // setRandomId.lastCategoryIndex = categoryIndex;
-  
-  //console.log("categoryIndex: ", categoryIndex);
-  */
-
   // set category name
   let categoryName;
   categoryName = category;
-
-  /*
-  switch (categoryIndex) {
-    case 0:
-      categoryName = "music";
-      break;
-    case 1:
-      categoryName = "rap";
-      break;
-    case 2:
-      categoryName = "skate";
-      break;
-    default:
-      break;
-  }
-  console.log(categoryName + ": ", data.category[categoryName]);
-  */
 
   // set video index
   let videoIndex;
   const videoLength = data.category[categoryName].length;
 
   videoIndex = Math.floor(Math.random() * videoLength);
-
-  // do {
-  //   videoIndex = Math.floor(Math.random() * videoLength);
-  // } while (videoIndex === setRandomId.lastVideoIndex);
-  // setRandomId.lastVideoIndex = videoIndex;
-  
-  // console.log("videoIndex: ", videoIndex);
   
   // shuffle category array
   let randomArray = data.category[categoryName];
@@ -181,19 +132,6 @@ function setRandomId() {
 
   return videoData;
 }
-
-// function setRandomIdNoRepeat() {
-//   let index;
-  
-//   do {
-//     index = Math.floor(Math.random() * ids.length);
-//   } while (index === setRandomIdNoRepeat.last);
-  
-//   setRandomIdNoRepeat.last = index;
-//   console.log(index);
-
-//   return ids[index];
-// }
 
 function shuffleId(array) {
   // set random id using Fisher-Yates shuffle
@@ -233,33 +171,8 @@ class RandomButton extends React.Component {
         </button>
       </div>
     );
-    // return ReactDOM.createPortal(
-    //   <button className="video-button nav-link" onClick={this.props.onClick}>
-    //     <img src={random} width="250" height="140" alt=""/>
-    //   </button>,
-    //   document.getElementById("portal-root")
-    // );
   }
 }
-
-// class ButtonPortal extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.button = document.getElementById("portal-root");
-//   }
-//   componentDidMount() {
-  
-//   }
-//   componentWillUnmount() {
-    
-//   }
-//   render() {
-//     return ReactDOM.createPortal(
-//       this.props.children,
-//       this.button
-//     );
-//   }
-// }
 
 class VideoPlayer extends React.Component {
   constructor(props) {
@@ -285,9 +198,6 @@ class VideoPlayer extends React.Component {
   }
 
   onEnd(event) {
-    // this.setState({
-    //   player: event.target,
-    // });
     this.onRandomVideo();
   }
 
@@ -306,20 +216,6 @@ class VideoPlayer extends React.Component {
       resolve();
     }).then(() => {
       //use `.then()` to do something after `resolve()` has been called
-      /*
-      let categoryImages = document.getElementById("category-container").childNodes;
-      
-      categoryImages.forEach(element => {
-        // remove active status
-        if (element.classList.contains("category-active")) {
-          element.classList.remove("category-active")
-        }
-        // check category name and add active status
-        if (element.id === ("category-" + randomData.category)) {
-          element.classList.add("category-active")
-        }
-      });
-      */
     }).then(() => {
       this.setState({
         videoId: randomData.id
@@ -375,7 +271,6 @@ class App extends React.Component {
           <div className="row">
             <div className="col-12">
               <VideoPlayer />;
-              
             </div>
           </div>
         </div>
