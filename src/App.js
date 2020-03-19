@@ -179,7 +179,7 @@ class VideoPlayer extends React.Component {
     super(props);
 
     this.state = {
-      videoId: "9eJsDDvpwmE",
+      videoId: this.onRandomVideo(),
       player: null,
     };
 
