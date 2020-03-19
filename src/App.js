@@ -101,8 +101,15 @@ function setRandomId() {
   // set video id
   videoId = randomArray[videoIndex].id;
   console.log("videoId: ", videoId);
-  
-  return videoId;
+
+  let videoData = {
+    category: categoryName,
+    title: videoTitle,
+    id: videoId
+  };
+  console.log(videoData);
+
+  return videoData;
 }
 
 // function setRandomIdNoRepeat() {
@@ -240,12 +247,13 @@ class VideoPlayer extends React.Component {
   }
 
   onRandomVideo() {
+    let randomData = setRandomId();
     new Promise((resolve, reject) => {
       resolve();
     }).then(() => {
       //use `.then()` to do something after `resolve()` has been called
       this.setState({
-        videoId: setRandomId()
+        videoId: randomData.id
       });
     }).then(() => {
       //use `.then()` to do something after `resolve()` has been called
