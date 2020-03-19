@@ -41,6 +41,70 @@ function shuffleId(array) {
   return array;
 }
 
+function setRandomId() {
+  // set category index
+  let categoryIndex;
+  const categoryLength = Object.keys(data.category).length;
+
+  categoryIndex = Math.floor(Math.random() * categoryLength);
+
+  // do {
+  //   categoryIndex = Math.floor(Math.random() * categoryLength);
+  // } while (categoryIndex === setRandomId.lastCategoryIndex);
+  // setRandomId.lastCategoryIndex = categoryIndex;
+  
+  console.log("categoryIndex: ", categoryIndex);
+
+  // set category name
+  let categoryName;
+
+  switch (categoryIndex) {
+    case 0:
+      categoryName = "music";
+      break;
+    case 1:
+      categoryName = "rap";
+      break;
+    case 2:
+      categoryName = "skate";
+      break;
+    default:
+      break;
+  }
+  console.log(categoryName + ": ", data.category[categoryName]);
+
+  // set video index
+  let videoIndex;
+  const videoLength = data.category[categoryName].length;
+
+  videoIndex = Math.floor(Math.random() * videoLength);
+
+  // do {
+  //   videoIndex = Math.floor(Math.random() * videoLength);
+  // } while (videoIndex === setRandomId.lastVideoIndex);
+  // setRandomId.lastVideoIndex = videoIndex;
+  
+  // console.log("videoIndex: ", videoIndex);
+  
+  // shuffle category array
+  let randomArray = data.category[categoryName];
+
+  shuffleId(randomArray)
+  
+  // set video title
+  let videoTitle;
+  let videoId;
+
+  videoTitle = randomArray[videoIndex].title;
+  console.log("videoTitle: ", videoTitle);
+
+  // set video id
+  videoId = randomArray[videoIndex].id;
+  console.log("videoId: ", videoId);
+  
+  return videoId;
+}
+
 function setCategoryIdPromise() {
   let categoryName;
   let categoryIndex;
