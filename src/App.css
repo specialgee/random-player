@@ -62,65 +62,18 @@
   width: 60%;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  #video-button {
-    top: 140vw;
-  }
+.category-image:hover {
+  cursor: pointer;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  #video-button {
-    top: 95vw;
-  }
+#category-music {
+  background-image: url(./assets/img/button-music.jpg);
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  #video-button {
-    top: 70vw;
-  }
+#category-rap {
+  background-image: url(./assets/img/button-rap.jpg);
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  #video-button {
-    top: 70vw;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  #video-button {
-    top: 70vw;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1366px) {
-  #video-button {
-    top: 60vw;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1450px) {
-  #video-button {
-    top: 55vw;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1600px) {
-  #video-button {
-    top: 50vw;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1900px) {
-  #video-button {
-    top: 45vw;
-  }
+#category-skate {
+  background-image: url(./assets/img/button-skate.jpg);
 }
