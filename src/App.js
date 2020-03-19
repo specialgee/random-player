@@ -99,23 +99,6 @@ function handleMouseOut(e) {
   }
 }
 
-// function setCategoryIdPromise() {
-//   let categoryName;
-//   let categoryIndex;
-//   const categoryLength = Object.keys(data.category).length;
-
-//   new Promise((resolve, reject) => {
-//     resolve();
-//   }).then(() => {
-//     categoryIndex = Math.floor(Math.random() * categoryLength);
-//     console.log("categoryIndex: ", categoryIndex);
-//   }).catch(() => {
-    
-//   }).finally(() => {
-    
-//   });
-// }
-
 function setRandomId() {
   /*
   // set category index
@@ -252,24 +235,24 @@ class RandomButton extends React.Component {
   }
 }
 
-class ButtonPortal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.button = document.getElementById("portal-root");
-  }
-  componentDidMount() {
+// class ButtonPortal extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.button = document.getElementById("portal-root");
+//   }
+//   componentDidMount() {
   
-  }
-  componentWillUnmount() {
+//   }
+//   componentWillUnmount() {
     
-  }
-  render() {
-    return ReactDOM.createPortal(
-      this.props.children,
-      this.button
-    );
-  }
-}
+//   }
+//   render() {
+//     return ReactDOM.createPortal(
+//       this.props.children,
+//       this.button
+//     );
+//   }
+// }
 
 class VideoPlayer extends React.Component {
   constructor(props) {
@@ -350,7 +333,7 @@ class VideoPlayer extends React.Component {
       playerVars: {
         rel: 0,
         autoplay: 0,
-        controls: 1,
+        controls: 0,
         iv_load_policy: 3,
         modestbranding: 1
       },
