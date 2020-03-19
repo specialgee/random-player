@@ -4,15 +4,120 @@ import YouTube from 'react-youtube';
 import './App.css';
 import data from './assets/data/data.json'; 
 import  music from './assets/img/button-music.jpg';
-import  rap from './assets/img/button-rap-active.jpg';
+import  musicActive from './assets/img/button-music-active.jpg';
+import  rap from './assets/img/button-rap.jpg';
+import  rapActive from './assets/img/button-rap-active.jpg';
 import  skate from './assets/img/button-skate.jpg';
+import  skateActive from './assets/img/button-skate-active.jpg';
 import  random from './assets/img/quarantine.gif';
-
-let ids=["9eJsDDvpwmE", "nqOTVuG1GPI", "ATypSV5c8hU"];
 
 console.log("data: ", data);
 
+let category = "rap";
+
+function setCategory(e) {
+  category = e.target.id.substring(9);
+  console.log(category);
+
+  setActive(e);
+}
+
+function setActive(e) {
+  let categoryImages = document.getElementById("category-container").childNodes;
+      
+  categoryImages.forEach(element => {
+    if (element.classList.contains("category-active")) {
+      // remove active status
+      element.classList.remove("category-active");
+      
+      // remove active image
+      switch (element.id) {
+        case "category-music":
+          element.src = music;
+          break;
+        case "category-rap":
+          element.src = rap;
+          break;
+        case "category-skate":
+          element.src = skate;
+          break;
+        default:
+          break;
+      }
+    }
+  });
+
+  // add active class
+  e.target.classList.add("category-active");
+
+  switch (e.target.id) {
+    case "category-music":
+      e.target.src = musicActive;
+      break;
+    case "category-rap":
+      e.target.src = rapActive;
+      break;
+    case "category-skate":
+      e.target.src = skateActive;
+      break;
+    default:
+      break;
+  }
+}
+
+function handleMouseOver(e) {
+  switch (e.target.id) {
+    case "category-music":
+      e.target.src = musicActive;
+      break;
+    case "category-rap":
+      e.target.src = rapActive;
+      break;
+    case "category-skate":
+      e.target.src = skateActive;
+      break;
+    default:
+      break;
+  }
+}
+
+function handleMouseOut(e) {
+  if (!e.target.classList.contains("category-active")) {
+    switch (e.target.id) {
+      case "category-music":
+        e.target.src = music;
+        break;
+      case "category-rap":
+        e.target.src = rap;
+        break;
+      case "category-skate":
+        e.target.src = skate;
+        break;
+      default:
+        break;
+    }  
+  }
+}
+
+// function setCategoryIdPromise() {
+//   let categoryName;
+//   let categoryIndex;
+//   const categoryLength = Object.keys(data.category).length;
+
+//   new Promise((resolve, reject) => {
+//     resolve();
+//   }).then(() => {
+//     categoryIndex = Math.floor(Math.random() * categoryLength);
+//     console.log("categoryIndex: ", categoryIndex);
+//   }).catch(() => {
+    
+//   }).finally(() => {
+    
+//   });
+// }
+
 function setRandomId() {
+  /*
   // set category index
   let categoryIndex;
   const categoryLength = Object.keys(data.category).length;
@@ -25,10 +130,13 @@ function setRandomId() {
   // setRandomId.lastCategoryIndex = categoryIndex;
   
   //console.log("categoryIndex: ", categoryIndex);
+  */
 
   // set category name
   let categoryName;
+  categoryName = category;
 
+  /*
   switch (categoryIndex) {
     case 0:
       categoryName = "music";
@@ -43,6 +151,7 @@ function setRandomId() {
       break;
   }
   console.log(categoryName + ": ", data.category[categoryName]);
+  */
 
   // set video index
   let videoIndex;
@@ -67,11 +176,11 @@ function setRandomId() {
   let videoId;
 
   videoTitle = randomArray[videoIndex].title;
-  console.log("videoTitle: ", videoTitle);
+  //console.log("videoTitle: ", videoTitle);
 
   // set video id
   videoId = randomArray[videoIndex].id;
-  console.log("videoId: ", videoId);
+  //console.log("videoId: ", videoId);
 
   let videoData = {
     category: categoryName,
@@ -111,23 +220,6 @@ function shuffleId(array) {
   //console.log("shuffle: ", array);
   return array;
 }
-
-// function setCategoryIdPromise() {
-//   let categoryName;
-//   let categoryIndex;
-//   const categoryLength = Object.keys(data.category).length;
-
-//   new Promise((resolve, reject) => {
-//     resolve();
-//   }).then(() => {
-//     categoryIndex = Math.floor(Math.random() * categoryLength);
-//     console.log("categoryIndex: ", categoryIndex);
-//   }).catch(() => {
-    
-//   }).finally(() => {
-    
-//   });
-// }
 
 class RandomButton extends React.Component {
   constructor(props) {
@@ -224,6 +316,7 @@ class VideoPlayer extends React.Component {
       resolve();
     }).then(() => {
       //use `.then()` to do something after `resolve()` has been called
+      /*
       let categoryImages = document.getElementById("category-container").childNodes;
       
       categoryImages.forEach(element => {
@@ -235,9 +328,8 @@ class VideoPlayer extends React.Component {
         if (element.id === ("category-" + randomData.category)) {
           element.classList.add("category-active")
         }
-        console.log(element);
       });
-
+      */
     }).then(() => {
       this.setState({
         videoId: randomData.id
