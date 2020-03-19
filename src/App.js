@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import YouTube from 'react-youtube';
 import './App.css';
+import data from './assets/data/data.json'; 
 import  music from './assets/img/BtnMusicHome.jpg';
 import  rap from './assets/img/BtnRAPFRANCAISover.jpg';
 import  skate from './assets/img/BtnSkateHome.jpg';
