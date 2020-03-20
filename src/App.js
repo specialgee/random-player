@@ -7,6 +7,7 @@ import  rapImage from './assets/img/button-rap.jpg';
 import  rapImageActive from './assets/img/button-rap-active.jpg';
 import  skateImage from './assets/img/button-skate.jpg';
 import  skateImageActive from './assets/img/button-skate-active.jpg';
+import  quarantineImage from './assets/img/quarantine-logo.gif';
 import  nextButtonImage from './assets/img/button-next.gif';
 
 let data;
@@ -251,9 +252,12 @@ class VideoPlayer extends React.Component {
     }
 
     return (
-      <div id="video-wrapper">
-        <div className="embed-responsive embed-responsive-16by9">
-          <div id="video-player">
+      <div>
+        <div id="video-container" className="embed-responsive">
+          <div id="logo-container">
+            <img id="quarantine-logo" onClick={this.onRandomVideo} src={quarantineImage} width="480" height="268" alt=""/>
+          </div>
+          <div id="video-player" className="hide">
             <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
           </div>
         </div>

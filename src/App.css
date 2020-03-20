@@ -15,6 +15,23 @@
   top: 25px;
 }
 
+#logo-container {
+  margin-top: 100px;
+}
+
+#quarantine-logo {
+  width: 100%;
+  max-width: 480px;
+}
+
+#quarantine-logo:hover {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
 /*
 #video-button-container {
   width: 60%;
