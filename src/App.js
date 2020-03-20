@@ -231,6 +231,11 @@ class VideoPlayer extends React.Component {
     });
   }
 
+  onChangeCategory(e) {
+    setCategory(e);
+    this.onRandomVideo();
+  }
+
   render() {
     const opts = {
       width: "60",
@@ -253,9 +258,9 @@ class VideoPlayer extends React.Component {
           </div>
         </div>
         <div id="category-container">
-          <img id="category-music" className="category-image" onClick={setCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={music} width="178" height="33" alt=""/>
-          <img id="category-rap" className="category-image category-active" onClick={setCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapActive} width="178" height="33" alt=""/>
-          <img id="category-skate" className="category-image" onClick={setCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skate} width="178" height="33" alt=""/>
+          <img id="category-music" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={music} width="178" height="33" alt=""/>
+          <img id="category-rap" className="category-image category-active" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapActive} width="178" height="33" alt=""/>
+          <img id="category-skate" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skate} width="178" height="33" alt=""/>
           <RandomButton onClick={this.onRandomVideo} />
         </div>
       </div>
