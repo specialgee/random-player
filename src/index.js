@@ -5,8 +5,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-var xhttp = new XMLHttpRequest();
-var data = {};
+let xhttp = new XMLHttpRequest();
+let data = {};
 xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
        // Typical action to be performed when the document is ready:
