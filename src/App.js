@@ -1,12 +1,12 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import './App.css';
-import  music from './assets/img/button-music.jpg';
-import  musicActive from './assets/img/button-music-active.jpg';
-import  rap from './assets/img/button-rap.jpg';
-import  rapActive from './assets/img/button-rap-active.jpg';
-import  skate from './assets/img/button-skate.jpg';
-import  skateActive from './assets/img/button-skate-active.jpg';
+import  musicImage from './assets/img/button-music.jpg';
+import  musicImageActive from './assets/img/button-music-active.jpg';
+import  rapImage from './assets/img/button-rap.jpg';
+import  rapImageActive from './assets/img/button-rap-active.jpg';
+import  skateImage from './assets/img/button-skate.jpg';
+import  skateImageActive from './assets/img/button-skate-active.jpg';
 import  nextButtonImage from './assets/img/button-next.gif';
 
 let data;
@@ -29,13 +29,13 @@ function setActive(e) {
       // remove active image
       switch (element.id) {
         case "category-music":
-          element.src = music;
+          element.src = musicImage;
           break;
         case "category-rap":
-          element.src = rap;
+          element.src = rapImage;
           break;
         case "category-skate":
-          element.src = skate;
+          element.src = skateImage;
           break;
         default:
           break;
@@ -48,13 +48,13 @@ function setActive(e) {
 
   switch (e.target.id) {
     case "category-music":
-      e.target.src = musicActive;
+      e.target.src = musicImageActive;
       break;
     case "category-rap":
-      e.target.src = rapActive;
+      e.target.src = rapImageActive;
       break;
     case "category-skate":
-      e.target.src = skateActive;
+      e.target.src = skateImageActive;
       break;
     default:
       break;
@@ -64,13 +64,13 @@ function setActive(e) {
 function handleMouseOver(e) {
   switch (e.target.id) {
     case "category-music":
-      e.target.src = musicActive;
+      e.target.src = musicImageActive;
       break;
     case "category-rap":
-      e.target.src = rapActive;
+      e.target.src = rapImageActive;
       break;
     case "category-skate":
-      e.target.src = skateActive;
+      e.target.src = skateImageActive;
       break;
     default:
       break;
@@ -81,13 +81,13 @@ function handleMouseOut(e) {
   if (!e.target.classList.contains("category-active")) {
     switch (e.target.id) {
       case "category-music":
-        e.target.src = music;
+        e.target.src = musicImage;
         break;
       case "category-rap":
-        e.target.src = rap;
+        e.target.src = rapImage;
         break;
       case "category-skate":
-        e.target.src = skate;
+        e.target.src = skateImage;
         break;
       default:
         break;
@@ -258,9 +258,9 @@ class VideoPlayer extends React.Component {
           </div>
         </div>
         <div id="category-container">
-          <img id="category-music" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={music} width="178" height="33" alt=""/>
-          <img id="category-rap" className="category-image category-active" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapActive} width="178" height="33" alt=""/>
-          <img id="category-skate" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skate} width="178" height="33" alt=""/>
+          <img id="category-music" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
+          <img id="category-rap" className="category-image category-active" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImageActive} width="178" height="33" alt=""/>
+          <img id="category-skate" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skateImage} width="178" height="33" alt=""/>
           <RandomButton onClick={this.onRandomVideo} />
         </div>
       </div>
