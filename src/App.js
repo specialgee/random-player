@@ -177,6 +177,8 @@ class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.youtubePlayerRef = React.createRef();
+
     this.state = {
       videoId: this.onRandomVideo(),
       player: null,
@@ -184,9 +186,10 @@ class VideoPlayer extends React.Component {
 
     this.onReady = this.onReady.bind(this);
     this.onEnd = this.onEnd.bind(this);
-    this.onRandomVideo = this.onRandomVideo.bind(this);
     this.onPlayVideo = this.onPlayVideo.bind(this);
     this.onPauseVideo = this.onPauseVideo.bind(this);
+    this.onRandomVideo = this.onRandomVideo.bind(this);
+    this.onChangeCategory = this.onChangeCategory.bind(this);
   }
 
   onReady(event) {
@@ -246,7 +249,7 @@ class VideoPlayer extends React.Component {
       <div id="video-wrapper">
         <div className="embed-responsive embed-responsive-16by9">
           <div id="video-player">
-            <YouTube videoId={this.state.videoId} className="random-video" opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
+            <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
           </div>
         </div>
         <div id="category-container">
@@ -261,6 +264,12 @@ class VideoPlayer extends React.Component {
 }
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.videoPlayerRef = React.createRef();
+  }
+  
   render() {
     data = JSON.parse(this.props.appData);
     console.log(data);
@@ -269,7 +278,8 @@ class App extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <VideoPlayer />;
+              <VideoPlayer ref={this.videoPlayerRef} />;
+              {/* <button onClick={() => this.videoPlayerRef.current.onRandomVideo()}>RANDOM</button> */}
             </div>
           </div>
         </div>
