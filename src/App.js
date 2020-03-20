@@ -178,6 +178,7 @@ class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.showPlayer = false;
     this.youtubePlayerRef = React.createRef();
 
     this.state = {
@@ -191,6 +192,7 @@ class VideoPlayer extends React.Component {
     this.onPauseVideo = this.onPauseVideo.bind(this);
     this.onRandomVideo = this.onRandomVideo.bind(this);
     this.onChangeCategory = this.onChangeCategory.bind(this);
+    this.onShowVideoPlayer = this.onShowVideoPlayer.bind(this);
   }
 
   onReady(event) {
@@ -224,6 +226,14 @@ class VideoPlayer extends React.Component {
         videoId: randomData.id
       });
     }).then(() => {
+      if (document.getElementById("video-player").classList.contains("hide") && this.showPlayer) {
+        document.getElementById("video-container").classList.add("embed-responsive-16by9");
+        document.getElementById("logo-container").classList.add("hide");
+        document.getElementById("video-player").classList.remove("hide");        
+      }
+
+      this.showPlayer = true;
+
       this.state.player.playVideo();
     }).catch(() => {
       //use `.catch()` to do something after `reject()` has been called
@@ -237,13 +247,19 @@ class VideoPlayer extends React.Component {
     this.onRandomVideo();
   }
 
+  onShowVideoPlayer() {
+    document.getElementById("video-container").classList.add("embed-responsive-16by9");
+    document.getElementById("logo-container").classList.add("hide");
+    document.getElementById("video-player").classList.remove("hide");
+  }
+
   render() {
     const opts = {
       width: "60",
       height: "315",
       playerVars: {
         rel: 0,
-        autoplay: 1,
+        autoplay: 0,
         controls: 0,
         iv_load_policy: 3,
         modestbranding: 1
