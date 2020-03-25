@@ -243,7 +243,7 @@ class VideoPlayer extends React.Component {
   }
 
   onChangeCategory(e) {
-    setCategory(e);
+    setMenuCategory(e);
     this.onRandomVideo();
   }
 
