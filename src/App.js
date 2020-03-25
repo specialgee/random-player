@@ -191,6 +191,7 @@ class VideoPlayer extends React.Component {
     this.onPlayVideo = this.onPlayVideo.bind(this);
     this.onPauseVideo = this.onPauseVideo.bind(this);
     this.onRandomVideo = this.onRandomVideo.bind(this);
+    this.onUpdateVideo = this.onUpdateVideo.bind(this);
     this.onChangeCategory = this.onChangeCategory.bind(this);
     this.onShowVideoPlayer = this.onShowVideoPlayer.bind(this);
   }
@@ -239,6 +240,20 @@ class VideoPlayer extends React.Component {
       //use `.catch()` to do something after `reject()` has been called
     }).finally(() => {
       //use `.finally()` to do something either way
+    });
+  }
+
+  onUpdateVideo() {
+    new Promise((resolve, reject) => {
+      resolve();
+    }).then(() => {
+      setCategory();
+    }).then(() => {
+      this.onRandomVideo();    
+    }).catch(() => {
+
+    }).finally(() => {
+
     });
   }
 
