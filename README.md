@@ -1,4 +1,4 @@
-random-music
+random-player
 ---
 
 Random Youtube Video Player
