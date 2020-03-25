@@ -11,15 +11,37 @@ import  quarantineImage from './assets/img/quarantine-logo.gif';
 import  nextButtonImage from './assets/img/button-next.gif';
 
 let data;
-let category = "rap";
+let category;
 
-function setCategory(e) {
-  category = e.target.id.substring(9);
+function setCategory() {
+  if ( category === undefined ) {
+    let index = Math.floor(Math.random() * Object.keys(data.category).length);
 
-  setActive(e);
+    switch (index) {
+      case 0:
+        category = "music";
+        break;
+      case 1:
+        category = "rap";
+        break;
+      case 2:
+        category = "skate";
+        break;  
+      default:
+        break;
+    }
+    
+    setActive();
+  }
 }
 
-function setActive(e) {
+function setMenuCategory(e) {
+  category = e.target.id.substring(9);
+
+  setActive();
+}
+
+function setActive() {
   let categoryImages = document.getElementById("category-container").childNodes;
       
   categoryImages.forEach(element => {
@@ -45,21 +67,25 @@ function setActive(e) {
   });
 
   // add active class
-  e.target.classList.add("category-active");
+  categoryImages.forEach(element => {
+    if (element.id.includes("category-" + category)) {
+      element.classList.add("category-active");
 
-  switch (e.target.id) {
-    case "category-music":
-      e.target.src = musicImageActive;
-      break;
-    case "category-rap":
-      e.target.src = rapImageActive;
-      break;
-    case "category-skate":
-      e.target.src = skateImageActive;
-      break;
-    default:
-      break;
-  }
+      switch (element.id) {
+        case "category-music":
+          element.src = musicImageActive;
+          break;
+        case "category-rap":
+          element.src = rapImageActive;
+          break;
+        case "category-skate":
+          element.src = skateImageActive;
+          break;
+        default:
+          break;
+      }  
+    }
+  });  
 }
 
 function handleMouseOver(e) {
@@ -182,7 +208,7 @@ class VideoPlayer extends React.Component {
     this.youtubePlayerRef = React.createRef();
 
     this.state = {
-      videoId: this.onRandomVideo(),
+      videoId: this.onUpdateVideo(),
       player: null,
     };
 
@@ -222,7 +248,6 @@ class VideoPlayer extends React.Component {
       resolve();
     }).then(() => {
       //use `.then()` to do something after `resolve()` has been called
-    }).then(() => {
       this.setState({
         videoId: randomData.id
       });
@@ -259,7 +284,8 @@ class VideoPlayer extends React.Component {
 
   onChangeCategory(e) {
     setMenuCategory(e);
-    this.onRandomVideo();
+
+    this.onRandomVideo();    
   }
 
   onShowVideoPlayer() {
@@ -286,7 +312,7 @@ class VideoPlayer extends React.Component {
       <div>
         <div id="video-container" className="embed-responsive">
           <div id="logo-container">
-            <img id="quarantine-logo" onClick={this.onRandomVideo} src={quarantineImage} width="480" height="268" alt=""/>
+            <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
           </div>
           <div id="video-player" className="hide">
             <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
@@ -294,9 +320,9 @@ class VideoPlayer extends React.Component {
         </div>
         <div id="category-container">
           <img id="category-music" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
-          <img id="category-rap" className="category-image category-active" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImageActive} width="178" height="33" alt=""/>
+          <img id="category-rap" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImage} width="178" height="33" alt=""/>
           <img id="category-skate" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skateImage} width="178" height="33" alt=""/>
-          <RandomButton onClick={this.onRandomVideo} />
+          <RandomButton onClick={this.onUpdateVideo} />
         </div>
       </div>
     );
@@ -319,7 +345,7 @@ class App extends React.Component {
           <div className="row">
             <div className="col-12">
               <VideoPlayer ref={this.videoPlayerRef} />;
-              {/* <button onClick={() => this.videoPlayerRef.current.onRandomVideo()}>RANDOM</button> */}
+              {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
             </div>
           </div>
         </div>
