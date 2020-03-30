@@ -3,6 +3,8 @@ random-player
 
 Random Youtube Video Player
 
+See [random-player-server](https://github.com/specialgee/random-player-server) for the back-end implementation.
+
 ## Available Scripts
 
 In the project directory, you can run:
