@@ -1,4 +1,6 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
+import Admin from './components/Admin';
 import YouTube from 'react-youtube';
 import './App.css';
 import  musicImage from './assets/img/button-music.jpg';
@@ -353,17 +355,21 @@ class App extends React.Component {
     data = JSON.parse(this.props.appData);
     console.log(data);
     return (
-      <div className="App">
+      <Switch>
+        <Route exact path="/">
+          <div className="App">
             <div className="app-container">
-          <div className="row">
-            <div className="col-12">
-              <VideoPlayer ref={this.videoPlayerRef} />;
-              {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
-            </div>
+              <div className="row">
+                <div className="col-12">
+                  <VideoPlayer ref={this.videoPlayerRef} />
+                  {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
+                </div>
+              </div>
+            </div>    
           </div>
-        </div>
-        
-      </div>
+        </Route>
+        <Route path="/admin" component={Admin} />
+      </Switch>
     );
   }
 }
