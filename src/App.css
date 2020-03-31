@@ -32,6 +32,24 @@
   display: none;
 }
 
+#views-container {
+  position: relative;
+  color: #fff;
+}
+
+#views-container p {
+  float: left;
+  font-size: 18px;
+}
+
+#views {
+  margin-right: 10px;
+}
+
+#category-container {
+  margin-top: 40px;
+}
+
 /*
 #video-button-container {
   width: 60%;

@@ -129,12 +129,12 @@ function setRandomId() {
 
   // set video index
   let videoIndex;
-  const videoLength = data.category[categoryName].length;
+  const videoLength = data.category[categoryName].links.length;
 
   videoIndex = Math.floor(Math.random() * videoLength);
   
   // shuffle category array
-  let randomArray = data.category[categoryName];
+  let randomArray = data.category[categoryName].links;
 
   shuffleId(randomArray)
   
@@ -173,6 +173,14 @@ function shuffleId(array) {
   }
   //console.log("shuffle: ", array);
   return array;
+}
+
+function setViews() {
+  let categoryName = category;
+
+  let views = data.category[categoryName].views;
+  //console.log(views);
+
 }
 
 class RandomButton extends React.Component {
@@ -274,7 +282,9 @@ class VideoPlayer extends React.Component {
     }).then(() => {
       setCategory();
     }).then(() => {
-      this.onRandomVideo();    
+      this.onRandomVideo();
+    }).then(() => {
+      setViews();
     }).catch(() => {
 
     }).finally(() => {
@@ -311,12 +321,15 @@ class VideoPlayer extends React.Component {
     return (
       <div>
         <div id="video-container" className="embed-responsive">
-          <div id="logo-container">
+          <div id="logo-container" className="fade-out">
             <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
           </div>
           <div id="video-player" className="hide">
             <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
           </div>
+        </div>
+        <div id="views-container">
+          <p id="views">100</p><p>views</p>
         </div>
         <div id="category-container">
           <img id="category-music" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
