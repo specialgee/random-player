@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
@@ -9,9 +10,14 @@ let xhttp = new XMLHttpRequest();
 let data = {};
 xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-       // Typical action to be performed when the document is ready:
-       data = JSON.parse(xhttp.responseText);
-       ReactDOM.render(<App appData={JSON.stringify(data)}/>, document.getElementById('root'));
+        // Typical action to be performed when the document is ready:
+        data = JSON.parse(xhttp.responseText);
+        ReactDOM.render(
+            <BrowserRouter>
+                <App appData={JSON.stringify(data)}/>
+            </BrowserRouter>,
+            document.getElementById('root')
+        );
     }
 };
 
