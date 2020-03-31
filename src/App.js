@@ -328,9 +328,9 @@ class VideoPlayer extends React.Component {
             <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
           </div>
         </div>
-        <div id="views-container">
+        {/* <div id="views-container">
           <p id="views">100</p><p>views</p>
-        </div>
+        </div> */}
         <div id="category-container">
           <img id="category-music" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
           <img id="category-rap" className="category-image" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImage} width="178" height="33" alt=""/>
