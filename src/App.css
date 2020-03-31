@@ -10,7 +10,7 @@
   font-size: calc(10px + 2vmin);
 }
 
-.container {
+.app-container {
   position: absolute;
   top: 25px;
 }
@@ -86,7 +86,7 @@
   top: 0;
   left: 0;
   position: fixed;
-}
+} */
 
 .center {
   margin: auto;
