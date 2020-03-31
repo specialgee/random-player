@@ -354,7 +354,7 @@ class App extends React.Component {
     console.log(data);
     return (
       <div className="App">
-        <div className="container">
+            <div className="app-container">
           <div className="row">
             <div className="col-12">
               <VideoPlayer ref={this.videoPlayerRef} />;
