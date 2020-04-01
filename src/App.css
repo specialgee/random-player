@@ -11,12 +11,11 @@
 }
 
 .app-container {
-  position: absolute;
-  top: 25px;
+  max-width: 1000px;
 }
 
 #logo-container {
-  margin-top: 100px;
+
 }
 
 #quarantine-logo {
