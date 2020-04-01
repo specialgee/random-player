@@ -401,7 +401,6 @@ class App extends React.Component {
                         <div className="navbar-nav">
                             <Link to="/login" className="nav-item nav-link">Login</Link>
                             {isAdmin && <Link to="/admin" className="nav-item nav-link">Admin</Link>}
-                            <a href="/login" onClick={this.logout} className="nav-item nav-link">Logout</a>
                         </div>
                     </nav>
                 }
