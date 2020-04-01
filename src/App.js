@@ -206,12 +206,12 @@ function shuffleId(array) {
   return array;
 }
 
-function setViews() {
-  let categoryName = category;
+// function setViews() {
+//   let categoryName = category;
 
-  let views = data.category[categoryName].views;
-  //console.log(views);
-}
+//   let views = data.category[categoryName].views;
+//   //console.log(views);
+// }
 
 class RandomButton extends React.Component {
   constructor(props) {
@@ -314,7 +314,7 @@ class VideoPlayer extends React.Component {
     }).then(() => {
       this.onRandomVideo();
     }).then(() => {
-      setViews();
+      //setViews();
     }).catch(() => {
 
     }).finally(() => {
