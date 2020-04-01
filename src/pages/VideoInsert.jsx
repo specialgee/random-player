@@ -120,17 +120,10 @@ class VideoInsert extends Component {
     }
 
     render() {
-        const { title, url, category } = this.state;
+        const { url, category } = this.state;
         return (
             <Wrapper>
                 <Title>ADD VIDEO</Title>
-
-                {/* <Label>TITLE: </Label>
-                <InputText
-                    type="text"
-                    value={title}
-                    onChange={this.handleChangeInputTitle}
-                /> */}
 
                 <Label>URL: </Label>
                 <InputText
