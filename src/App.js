@@ -16,12 +16,37 @@ import  skateImageActive from './assets/img/button-skate-active.jpg';
 import  quarantineImage from './assets/img/quarantine-logo.gif';
 import  nextButtonImage from './assets/img/button-next.gif';
 
-let data;
+let data = {
+  music: [],
+  rap: [],
+  skate: []
+};
+
 let category;
+
+function parseData(appData) {  
+  JSON.parse(appData).forEach(element => {
+    switch (element.category) {
+      case "MUSIC":
+        data.music.push(element);
+        break;
+      case "RAP":
+        data.rap.push(element);
+        break;
+      case "SKATE":
+        data.skate.push(element);
+        break;
+      default:
+        break;
+    }
+  })
+
+  console.log("DATA: ", data);
+}
 
 function setCategory() {
   if ( category === undefined ) {
-    let index = Math.floor(Math.random() * Object.keys(data.category).length);
+    let index = Math.floor(Math.random() * Object.keys(data).length);
 
     switch (index) {
       case 0:
