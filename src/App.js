@@ -418,7 +418,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/">
             <div className="App">
-              <div className="app-container">
+              <div className="app-container w-75">
                 <div className="row">
                   <div className="col-12">
                     <VideoPlayer ref={this.videoPlayerRef} />
