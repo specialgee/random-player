@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { history, Role } from '../helpers';
+import { history } from '../helpers';
 import { authenticationService } from '../services';
 
 
