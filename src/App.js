@@ -290,7 +290,7 @@ class VideoPlayer extends React.Component {
         videoId: randomData.id
       });
     }).then(() => {
-      if (document.getElementById("video-player").classList.contains("hide") && this.showPlayer) {
+      if (document.getElementById("video-player").classList.contains("hide") && !this.showPlayer) {
         document.getElementById("video-container").classList.add("embed-responsive-16by9");
         document.getElementById("logo-container").classList.add("hide");
         document.getElementById("video-player").classList.remove("hide");        
