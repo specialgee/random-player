@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { history, Role } from '../helpers';
+import { authenticationService } from '../services';
+
 
 const Collapse = styled.div.attrs({
     className: 'collpase navbar-collapse',
@@ -15,6 +18,12 @@ const Item = styled.div.attrs({
 })``
 
 class Links extends Component {
+    
+    logout() {
+        authenticationService.logout();
+        history.push('/login');
+    }
+  
     render() {
         return (
             <React.Fragment>
@@ -31,6 +40,11 @@ class Links extends Component {
                         <Item>
                             <Link to="/admin/videos/create" className="nav-link">
                                 ADD VIDEO
+                            </Link>
+                        </Item>
+                        <Item>
+                            <Link to="/login" className="nav-link" onClick={this.logout}>
+                                LOGOUT
                             </Link>
                         </Item>
                     </List>
