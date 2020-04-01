@@ -2,7 +2,6 @@ import React from 'react';
 import { Router, Switch, Route, Link } from 'react-router-dom';
 import { history, Role } from './helpers';
 import { authenticationService } from './services';
-import { AdminPage } from './AdminPage';
 import { LoginPage } from './LoginPage';
 import { PrivateRoute } from './components/PrivateRoute';
 import Admin from './components/Admin';
