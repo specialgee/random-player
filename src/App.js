@@ -1,5 +1,10 @@
 import React from 'react';
 import { Router, Switch, Route, Link } from 'react-router-dom';
+import { history, Role } from './helpers';
+import { authenticationService } from './services';
+import { AdminPage } from './AdminPage';
+import { LoginPage } from './LoginPage';
+import PrivateRoute from './components/PrivateRoute';
 import Admin from './components/Admin';
 import YouTube from 'react-youtube';
 import './App.css';
@@ -182,7 +187,6 @@ function setViews() {
 
   let views = data.category[categoryName].views;
   //console.log(views);
-
 }
 
 class RandomButton extends React.Component {
@@ -348,29 +352,73 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      currentUser: null,
+      isAdmin: false
+    };
+
     this.videoPlayerRef = React.createRef();
   }
-  
+
+  componentDidMount() {
+    authenticationService.currentUser.subscribe(x => this.setState({
+        currentUser: x,
+        isAdmin: x && x.role === Role.Admin
+    }));
+  }
+
+  logout() {
+      authenticationService.logout();
+      history.push('/login');
+  }
+
   render() {
+    const { currentUser, isAdmin } = this.state;
+
     data = JSON.parse(this.props.appData);
     console.log(data);
+
     return (
       <Router history={history}>
-      <Switch>
-        <Route exact path="/">
-          <div className="App">
-            <div className="app-container">
-              <div className="row">
-                <div className="col-12">
-                  <VideoPlayer ref={this.videoPlayerRef} />
-                  {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
+        <Switch>
+          <Route exact path="/">
+            <div className="App">
+              <div className="app-container">
+                <div className="row">
+                  <div className="col-12">
+                    <VideoPlayer ref={this.videoPlayerRef} />
+                    {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
+                  </div>
                 </div>
-              </div>
-            </div>    
-          </div>
-        </Route>
-        <Route path="/admin" component={Admin} />
-      </Switch>
+              </div>    
+            </div>
+          </Route>
+          <Route path="/admin" component={Admin} />
+          <Route path="/login">
+            <div>
+                {currentUser &&
+                    <nav className="navbar navbar-expand navbar-dark bg-dark">
+                        <div className="navbar-nav">
+                            <Link to="/login" className="nav-item nav-link">Login</Link>
+                            {isAdmin && <Link to="/admin" className="nav-item nav-link">Admin</Link>}
+                            <a href="/login" onClick={this.logout} className="nav-item nav-link">Logout</a>
+                        </div>
+                    </nav>
+                }
+                <div className="jumbotron">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-6 offset-md-3">
+                                {/* <PrivateRoute exact path="/" component={HomePage} /> */}
+                                <PrivateRoute path="/admin" roles={[Role.Admin]} component={AdminPage} />
+                                <Route path="/login" component={LoginPage} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </Route>
+        </Switch>
       </Router>
     );
   }
