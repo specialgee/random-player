@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
@@ -13,9 +12,7 @@ xhttp.onreadystatechange = function() {
         // Typical action to be performed when the document is ready:
         data = JSON.parse(xhttp.responseText);
         ReactDOM.render(
-            <BrowserRouter>
-                <App appData={JSON.stringify(data)}/>
-            </BrowserRouter>,
+            <App appData={JSON.stringify(data)}/>,
             document.getElementById('root')
         );
     }

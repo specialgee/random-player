@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Router, Switch, Route, Link } from 'react-router-dom';
 import Admin from './components/Admin';
 import YouTube from 'react-youtube';
 import './App.css';
@@ -355,6 +355,7 @@ class App extends React.Component {
     data = JSON.parse(this.props.appData);
     console.log(data);
     return (
+      <Router history={history}>
       <Switch>
         <Route exact path="/">
           <div className="App">
@@ -370,6 +371,7 @@ class App extends React.Component {
         </Route>
         <Route path="/admin" component={Admin} />
       </Switch>
+      </Router>
     );
   }
 }
