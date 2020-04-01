@@ -154,18 +154,30 @@ function handleMouseOut(e) {
 }
 
 function setRandomId() {
-  // set category name
-  let categoryName;
-  categoryName = category;
+  // set data category
+  let dataCategory;
 
+  switch (category) {
+    case "music":
+      dataCategory = data.music;
+      break;
+    case "rap":
+      dataCategory = data.rap;
+      break;
+    case "skate":
+      dataCategory = data.skate;
+      break;
+    default:
+      break;
+  }
   // set video index
   let videoIndex;
-  const videoLength = data.category[categoryName].links.length;
+  const videoLength = dataCategory.length;
 
   videoIndex = Math.floor(Math.random() * videoLength);
   
   // shuffle category array
-  let randomArray = data.category[categoryName].links;
+  let randomArray = dataCategory;
 
   shuffleId(randomArray)
   
@@ -177,16 +189,16 @@ function setRandomId() {
   //console.log("videoTitle: ", videoTitle);
 
   // set video id
-  videoId = randomArray[videoIndex].id;
+  videoId = randomArray[videoIndex].url;
   //console.log("videoId: ", videoId);
 
   let videoData = {
-    category: categoryName,
+    category: category,
     title: videoTitle,
     id: videoId
   };
   console.log(videoData);
-
+  
   return videoData;
 }
 
@@ -246,7 +258,7 @@ class VideoPlayer extends React.Component {
     this.youtubePlayerRef = React.createRef();
 
     this.state = {
-      videoId: this.onUpdateVideo(),
+      videoId: "",
       player: null,
     };
 
@@ -385,9 +397,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    parseData(this.props.appData);
+
     authenticationService.currentUser.subscribe(x => this.setState({
-        currentUser: x,
-        isAdmin: x && x.role === Role.Admin
+      currentUser: x,
+      isAdmin: x && x.role === Role.Admin
     }));
   }
 
@@ -398,9 +412,6 @@ class App extends React.Component {
 
   render() {
     const { currentUser, isAdmin } = this.state;
-
-    data = JSON.parse(this.props.appData);
-    console.log(data);
 
     return (
       <Router history={history}>
