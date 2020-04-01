@@ -4,7 +4,7 @@ import { history, Role } from './helpers';
 import { authenticationService } from './services';
 import { AdminPage } from './AdminPage';
 import { LoginPage } from './LoginPage';
-import PrivateRoute from './components/PrivateRoute';
+import { PrivateRoute } from './components/PrivateRoute';
 import Admin from './components/Admin';
 import YouTube from 'react-youtube';
 import './App.css';
