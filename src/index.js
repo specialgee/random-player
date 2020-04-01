@@ -2,24 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import api from './api';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-let xhttp = new XMLHttpRequest();
-let data = {};
-xhttp.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-        // Typical action to be performed when the document is ready:
-        data = JSON.parse(xhttp.responseText);
+let data;
+
+const start = async () => {
+    await api.getAllVideos().then(videos => {
+        data = videos.data.data;
+    }).then( () => {
         ReactDOM.render(
             <App appData={JSON.stringify(data)}/>,
             document.getElementById('root')
-        );
-    }
-};
+        );        
+    }).catch(() => {
 
-xhttp.open("GET", `${process.env.PUBLIC_URL}/data.json`, true);
-xhttp.send();
+    }).finally(() => {
+
+    });
+}
+
+start();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
