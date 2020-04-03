@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { history, Role } from './helpers';
 import { authenticationService } from './services';
 import { LoginPage } from './LoginPage';
@@ -414,7 +414,7 @@ class App extends React.Component {
     const { currentUser, isAdmin } = this.state;
 
     return (
-      <Router history={history}>
+      <BrowserRouter history={history} basename="/">
         <Switch>
           <Route exact path="/">
             <div className="App">
@@ -453,7 +453,7 @@ class App extends React.Component {
             </div>
           </Route>
         </Switch>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
