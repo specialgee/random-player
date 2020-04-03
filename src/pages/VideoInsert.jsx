@@ -104,16 +104,20 @@ class VideoInsert extends Component {
                 resolve();
             })    
         }).then(() => {
-            api.insertVideo(payload).then(res => {
+            api.insertVideo(payload)
+            .then(res => {
                 window.alert(`Video inserted successfully`);
                 this.setState({
                     title: '',
                     url: '',
                     category: '',
                 })
-            })        
+            }).finally(() => {
+                window.location.href = `/admin`;
+            });
+
         }).catch(() => {
-      
+    
         }).finally(() => {
     
         });
