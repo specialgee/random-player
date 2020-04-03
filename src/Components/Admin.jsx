@@ -11,11 +11,11 @@ function Admin() {
         <BrowserRouter basename="/">
             <NavBar />
             <Switch>
-                <Route path="/admin/videos/list" exact component={VideoList} />
-                <Route path="/admin/videos/create" exact component={VideoInsert} />
+                <Route path="/admin/videos/list"  component={VideoList} />
+                <Route path="/admin/videos/create"  component={VideoInsert} />
                 <Route
                     path="/admin/videos/update/:id"
-                    exact
+                    
                     component={VideoUpdate}
                 />
             </Switch>
