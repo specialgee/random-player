@@ -142,7 +142,7 @@ class VideoInsert extends Component {
                     <option value="" hidden></option>
                     <option value="MUSIC">MUSIC</option>
                     <option value="RAP">RAP FR</option>
-                    <option value="SKATE">SKATEBOARD</option>
+                    <option value="SKATE">SKATE</option>
                 </Select>
 
                 <Button onClick={this.handleIncludeVideo}>ADD VIDEO</Button>
