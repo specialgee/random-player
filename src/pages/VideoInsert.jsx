@@ -95,8 +95,8 @@ class VideoInsert extends Component {
 
         new Promise((resolve, reject) => {
             getYoutubeTitle(this.state.url, API_KEY, function (err, title) {
-                console.log(title);
-                console.log(err);
+                console.log("TITLE: ", title);
+                if (err) console.log("ERROR: ", err);
 
                 _this.setState({ title });
                 payload.title = title;
