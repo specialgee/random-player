@@ -88,13 +88,16 @@ class VideoUpdate extends Component {
         const { _id, title, url, category } = this.state;
         const payload = { title, url, category }
 
-        await api.updateVideoById(_id, payload).then(res => {
+        await api.updateVideoById(_id, payload)
+        .then(res => {
             window.alert(`Video updated successfully`);
             this.setState({
                 title: '',
                 url: '',
                 category: '',
             })
+        }).finally(() => {
+            window.location.href = `/admin`;
         })
     }
 
