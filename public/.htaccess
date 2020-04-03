@@ -1,7 +1,7 @@
 RewriteEngine On
-RewriteBase /random-player
+RewriteBase /
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule . /random-player/$1 [L]
+RewriteRule . /$1 [L]
