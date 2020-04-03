@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ReactTable from 'react-table';
 import api from '../api';
 
@@ -21,33 +22,32 @@ const Delete = styled.div`
 `
 
 class UpdateVideo extends Component {
-    updateEntry = event => {
-        event.preventDefault();
+    // updateEntry = event => {
+    //     event.preventDefault();
 
-        window.location.href = `/admin/videos/update/${this.props.id}`;
-    }
+    //     window.location.href = `/admin/videos/update/${this.props.id}`;        
+    // }
 
     render() {
-        return <Update onClick={this.updateEntry}>Update</Update>;
+        return <Link to={`/admin/videos/update/${this.props.id}`} > Update </Link>
     }
 }
 
 class DeleteVideo extends Component {
-    deleteEntry = event => {
-        event.preventDefault();
-
+    deleteEntry = async () => {
         if (
             window.confirm(
                 `Do you want to delete the video ${this.props.id} permanently?`,
             )
         ) {
-            api.deleteVideoById(this.props.id);
+            await api.deleteVideoById(this.props.id);
             window.location.reload();
-        }
+        }        
     }
 
+
     render() {
-        return <Delete onClick={this.deleteEntry}>Delete</Delete>;
+        return <Link to={`/admin`} onClick={this.deleteEntry} > Delete </Link>
     }
 }
 
