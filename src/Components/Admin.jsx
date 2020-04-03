@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { NavBar } from '../components';
 import { VideoList, VideoInsert, VideoUpdate } from '../pages';
@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Admin() {
     return (
-        <Router>
+        <BrowserRouter basename="/">
             <NavBar />
             <Switch>
                 <Route path="/admin/videos/list" exact component={VideoList} />
@@ -19,7 +19,7 @@ function Admin() {
                     component={VideoUpdate}
                 />
             </Switch>
-        </Router>
+        </BrowserRouter>
     )
 }
 
