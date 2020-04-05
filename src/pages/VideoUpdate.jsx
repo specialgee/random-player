@@ -91,17 +91,32 @@ class VideoUpdate extends Component {
         const { _id, title, url, category } = this.state;
         const payload = { title, url, category }
 
-        await api.updateVideoById(_id, payload)
-        .then(res => {
-            window.alert(`Video updated successfully`);
-            this.setState({
-                title: '',
-                url: '',
-                category: '',
+        // await api.updateVideoById(_id, payload)
+        // .then(res => {
+        //     window.alert(`Video updated successfully`);
+        //     this.setState({
+        //         title: '',
+        //         url: '',
+        //         category: '',
+        //     })
+        // }).finally(() => {
+        //     //window.location.href = `/admin`;
+        //     history.push("/admin/videos/list");
+        //     window.location.reload(true);
+        // })
+
+        new Promise((resolve, reject) => {
+            api.updateVideoById(_id, payload)
+            .then(res => {
+                window.alert(`Video updated successfully`);
+                resolve();
             })
+        }).catch(() => {
+
         }).finally(() => {
-            window.location.href = `/admin`;
-        })
+            history.push(process.env.PUBLIC_URL + "/admin/videos/list");
+            window.location.reload(true);
+        })    
     }
 
     componentDidMount = async () => {
