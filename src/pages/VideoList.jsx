@@ -47,7 +47,7 @@ class DeleteVideo extends Component {
 
 
     render() {
-        return <Link to={`/admin`} onClick={this.deleteEntry} > Delete </Link>
+        return <Link to={`/admin/videos/list`} onClick={this.deleteEntry} > Delete </Link>
     }
 }
 

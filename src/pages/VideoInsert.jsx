@@ -150,7 +150,8 @@ class VideoInsert extends Component {
                 </Select>
 
                 <Button onClick={this.handleIncludeVideo}>ADD VIDEO</Button>
-                <CancelButton href={'/admin/videos/list'}>CANCEL</CancelButton>
+                {/* <CancelButton href={'/admin/videos/list'}>CANCEL</CancelButton> */}
+                <Link to="/admin/videos/list" className="btn btn-danger"> CANCEL </Link>
             </Wrapper>
         )
     }
