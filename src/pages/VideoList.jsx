@@ -16,10 +16,10 @@ const Update = styled.div`
     cursor: pointer;
 `
 
-const Delete = styled.div`
-    color: #ff0000;
-    cursor: pointer;
-`
+// const Delete = styled.div`
+//     color: #ff0000;
+//     cursor: pointer;
+// `
 
 class UpdateVideo extends Component {
     // updateEntry = event => {
@@ -40,8 +40,21 @@ class DeleteVideo extends Component {
                 `Do you want to delete the video ${this.props.id} permanently?`,
             )
         ) {
-            await api.deleteVideoById(this.props.id);
-            window.location.reload();
+            // // await api.deleteVideoById(this.props.id).then( () => {
+            // //     window.location.reload(true);
+            // //     //history.replace('/')
+            // // });
+            
+            new Promise((resolve, reject) => {
+                api.deleteVideoById(this.props.id).then( () => {
+                    resolve();
+                });    
+            }).catch(() => {
+        
+            }).finally(() => {
+                window.location.reload(true);        
+            });
+    
         }        
     }
 
