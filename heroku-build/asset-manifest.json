@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1d3014a8.chunk.css",
+    "main.js": "/static/js/main.ed0ec628.chunk.js",
+    "main.js.map": "/static/js/main.ed0ec628.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b2b29c3d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b2b29c3d.js.map",
+    "static/css/2.fbd4d1d5.chunk.css": "/static/css/2.fbd4d1d5.chunk.css",
+    "static/js/2.2edebf66.chunk.js": "/static/js/2.2edebf66.chunk.js",
+    "static/js/2.2edebf66.chunk.js.map": "/static/js/2.2edebf66.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c1f6a6985622138520e24250e55834b1.js": "/precache-manifest.c1f6a6985622138520e24250e55834b1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.fbd4d1d5.chunk.css.map": "/static/css/2.fbd4d1d5.chunk.css.map",
+    "static/css/main.1d3014a8.chunk.css.map": "/static/css/main.1d3014a8.chunk.css.map",
+    "static/js/2.2edebf66.chunk.js.LICENSE.txt": "/static/js/2.2edebf66.chunk.js.LICENSE.txt",
+    "static/media/button-rap-active.jpg": "/static/media/button-rap-active.b540bd7d.jpg",
+    "static/media/quarantine-logo.gif": "/static/media/quarantine-logo.9a0d2607.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2b29c3d.js",
+    "static/css/2.fbd4d1d5.chunk.css",
+    "static/js/2.2edebf66.chunk.js",
+    "static/css/main.1d3014a8.chunk.css",
+    "static/js/main.ed0ec628.chunk.js"
+  ]
+}
