@@ -70,6 +70,7 @@ class VideoUpdate extends Component {
             category: '',
         }
     }
+    
 
     handleChangeInputTitle = async event => {
         const title = event.target.value;
