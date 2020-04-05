@@ -414,7 +414,7 @@ class App extends React.Component {
     const { currentUser, isAdmin } = this.state;
 
     return (
-      <BrowserRouter history={history} basename="/">
+      <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/">
             <div className="App">

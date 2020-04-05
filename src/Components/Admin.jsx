@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Admin() {
     return (
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <NavBar />
             <Switch>
                 <Route path="/admin/videos/list"  component={VideoList} />
