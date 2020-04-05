@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { history } from '../helpers';
 import api from '../api';
 
 import styled from 'styled-components';
@@ -51,11 +53,11 @@ const Button = styled.button.attrs({
     margin: 15px 15px 15px 5px;
 `
 
-const CancelButton = styled.a.attrs({
-    className: `btn btn-danger`,
-})`
-    margin: 15px 15px 15px 5px;
-`
+// const CancelButton = styled.a.attrs({
+//     className: `btn btn-danger`,
+// })`
+//     margin: 15px 15px 15px 5px;
+// `
 
 class VideoUpdate extends Component {
     constructor(props) {
@@ -144,7 +146,8 @@ class VideoUpdate extends Component {
                 </Select>
 
                 <Button onClick={this.handleUpdateVideo}>UPDATE VIDEO</Button>
-                <CancelButton href={'/admin/videos/list'}>CANCEL</CancelButton>
+                {/* <CancelButton href={'/admin/videos/list'}>CANCEL</CancelButton> */}
+                <Link to="/admin/videos/list" className="btn btn-danger"> CANCEL </Link>
             </Wrapper>
         )
     }
