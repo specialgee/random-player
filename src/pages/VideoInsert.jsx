@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../api';
 
 import styled from 'styled-components';
@@ -55,11 +56,11 @@ const Button = styled.button.attrs({
     margin: 15px 15px 15px 5px;
 `
 
-const CancelButton = styled.a.attrs({
-    className: `btn btn-danger`,
-})`
-    margin: 15px 15px 15px 5px;
-`
+// const CancelButton = styled.a.attrs({
+//     className: `btn btn-danger`,
+// })`
+//     margin: 15px 15px 15px 5px;
+// `
 
 class VideoInsert extends Component {
     constructor(props) {
@@ -91,36 +92,43 @@ class VideoInsert extends Component {
         const _this = this;
 
         const { title, url, category } = this.state;
-        let payload = { title, url, category };
 
-        new Promise((resolve, reject) => {
-            getYoutubeTitle(this.state.url, API_KEY, function (err, title) {
-                console.log("TITLE: ", title);
-                if (err) console.log("ERROR: ", err);
-
-                _this.setState({ title });
-                payload.title = title;
-                
-                resolve();
-            })    
-        }).then(() => {
-            api.insertVideo(payload)
-            .then(res => {
-                window.alert(`Video inserted successfully`);
-                this.setState({
-                    title: '',
-                    url: '',
-                    category: '',
-                })
+        if (!url) {
+            alert("Please add URL");
+        } else if (!category) {
+            alert("Please add category");
+        } else {
+            let payload = { title, url, category };
+        
+            new Promise((resolve, reject) => {
+                getYoutubeTitle(this.state.url, API_KEY, function (err, title) {
+                    console.log("TITLE: ", title);
+                    if (err) console.log("ERROR: ", err);
+    
+                    _this.setState({ title });
+                    payload.title = title;
+                    
+                    resolve();
+                })    
+            }).then(() => {
+                api.insertVideo(payload)
+                .then(res => {
+                    window.alert(`Video inserted successfully`);
+                    this.setState({
+                        title: '',
+                        url: '',
+                        category: '',
+                    })
+                }).finally(() => {
+                    //window.location.href = `/admin`;
+                });
+    
+            }).catch(() => {
+        
             }).finally(() => {
-                window.location.href = `/admin`;
-            });
-
-        }).catch(() => {
-    
-        }).finally(() => {
-    
-        });
+        
+            });    
+        }        
     }
 
     render() {
