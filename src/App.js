@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Router, Switch, Route, Link } from 'react-router-dom';
 import { history, Role } from './helpers';
 import { authenticationService } from './services';
 import { LoginPage } from './LoginPage';
@@ -361,7 +361,7 @@ class VideoPlayer extends React.Component {
     }
 
     return (
-      <div className=" align-items-center justify-content-center">
+      <div className="align-items-center justify-content-center">
         <div id="video-container" className="embed-responsive">
           <div id="logo-container" className="fade-out">
             <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
@@ -414,7 +414,7 @@ class App extends React.Component {
     const { currentUser, isAdmin } = this.state;
 
     return (
-      <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+      <Router history={history} basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/">
             <div className="App">
@@ -453,7 +453,7 @@ class App extends React.Component {
             </div>
           </Route>
         </Switch>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
