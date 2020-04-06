@@ -136,6 +136,7 @@ class VideoUpdate extends Component {
                     onChange={this.handleChangeInputUrl}
                 />
 
+                <Label>CATEGORY: </Label>
                 <Select
                     type="text"
                     value={category}
