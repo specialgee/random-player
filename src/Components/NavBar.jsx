@@ -15,6 +15,7 @@ const Nav = styled.nav.attrs({
 })`
     margin-bottom: 20 px;
     background-color: #000;
+    border-bottom: 1px solid #fff;
 `
 
 class NavBar extends Component {
