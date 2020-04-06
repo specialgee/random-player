@@ -29,7 +29,7 @@ class UpdateVideo extends Component {
     // }
 
     render() {
-        return <Link to={`/admin/videos/update/${this.props.id}`} > Update </Link>
+        return <Link className="updateLink" to={`/admin/videos/update/${this.props.id}`} > Update </Link>
     }
 }
 
@@ -44,7 +44,7 @@ class DeleteVideo extends Component {
             // //     window.location.reload(true);
             // //     //history.replace('/')
             // // });
-            
+
             new Promise((resolve, reject) => {
                 api.deleteVideoById(this.props.id).then( () => {
                     resolve();
@@ -60,7 +60,7 @@ class DeleteVideo extends Component {
 
 
     render() {
-        return <Link to={`/admin/videos/list`} onClick={this.deleteEntry} > Delete </Link>
+        return <Link className="deleteLink" to={`/admin/videos/list`} onClick={this.deleteEntry} > Delete </Link>
     }
 }
 
@@ -89,33 +89,35 @@ class VideoList extends Component {
         const { videos, isLoading } = this.state;
 
         const columns = [
-            {
-                Header: 'ID',
-                accessor: '_id',
-                filterable: true,
-            },
+            // {
+            //     Header: 'ID',
+            //     accessor: '_id',
+            //     filterable: false,
+            // },
             {
                 Header: 'TITLE',
                 accessor: 'title',
-                filterable: true,
+                filterable: false,
             },
             {
                 Header: 'URL',
                 accessor: 'url',
-                filterable: true,
+                filterable: false,
             },
             {
                 Header: 'CATEGORY',
                 accessor: 'category',
-                filterable: true,
+                filterable: false
             },
             {
                 Header: '',
                 accessor: '',
+                className: 'gridCellLink',
+                width: 100,
                 Cell: function(props) {
                     return (
                         <span>
-                            <DeleteVideo id={props.original._id} />
+                            <UpdateVideo id={props.original._id} />
                         </span>
                     )
                 },
@@ -123,10 +125,12 @@ class VideoList extends Component {
             {
                 Header: '',
                 accessor: '',
+                className: 'gridCellLink',
+                width: 100,
                 Cell: function(props) {
                     return (
                         <span>
-                            <UpdateVideo id={props.original._id} />
+                            <DeleteVideo id={props.original._id} />
                         </span>
                     )
                 },
@@ -149,8 +153,8 @@ class VideoList extends Component {
                         showPageSizeOptions={true}
                         minRows={0}
                         style={{
-                            // This will force the table body to overflow and scroll, since there is not enough room
-                            height: "400px"
+                            // Force the table body to overflow and scroll, since there is not enough room
+                            height: "500px"
                         }}
                     />
                 )}
