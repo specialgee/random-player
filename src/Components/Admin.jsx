@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { NavBar } from '../components';
 import { VideoList, VideoInsert, VideoUpdate } from '../pages';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/darkly/bootstrap.min.css';
 
 function Admin() {
     return (
