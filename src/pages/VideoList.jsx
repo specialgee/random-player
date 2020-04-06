@@ -5,7 +5,7 @@ import api from '../api';
 
 import styled from 'styled-components';
 
-import '../assets/styles/react-table.css';
+import '../assets/styles/react-table-inverted.css';
 
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
