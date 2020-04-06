@@ -5,6 +5,7 @@ import { NavBar } from '../components';
 import { VideoList, VideoInsert, VideoUpdate } from '../pages';
 
 import 'bootswatch/dist/darkly/bootstrap.min.css';
+import './styles/Admin.css';
 
 function Admin() {
     return (
