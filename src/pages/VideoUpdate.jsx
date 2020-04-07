@@ -119,8 +119,8 @@ class VideoUpdate extends Component {
     render() {
         const { title, url, category } = this.state;
         return (
-            <Wrapper>
-                <Title>ADD VIDEO</Title>
+            <Wrapper className="col-sm-4 offset-md-4">
+                <Title className="mb-4" >UPDATE VIDEO</Title>
 
                 <Label>TITLE: </Label>
                 <InputText
@@ -129,14 +129,14 @@ class VideoUpdate extends Component {
                     onChange={this.handleChangeInputTitle}
                 />
 
-                <Label>URL: </Label>
+                <Label className="mt-4">URL: </Label>
                 <InputText
                     type="text"
                     value={url}
                     onChange={this.handleChangeInputUrl}
                 />
 
-                <Label>CATEGORY: </Label>
+                <Label className="mt-4">CATEGORY: </Label>
                 <Select
                     type="text"
                     value={category}
@@ -148,9 +148,10 @@ class VideoUpdate extends Component {
                     <option value="SKATE">SKATEBOARD</option>
                 </Select>
 
-                <Button onClick={this.handleUpdateVideo}>UPDATE VIDEO</Button>
-                {/* <CancelButton href={'/admin/videos/list'}>CANCEL</CancelButton> */}
-                <Link to="/admin/videos/list" className="btn btn-danger"> CANCEL </Link>
+                <div className="mt-4">
+                    <Button onClick={this.handleUpdateVideo}>UPDATE VIDEO</Button>
+                    <Link to="/admin/videos/list" className="btn btn-danger"> CANCEL </Link>
+                </div>
             </Wrapper>
         )
     }

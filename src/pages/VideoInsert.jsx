@@ -134,8 +134,8 @@ class VideoInsert extends Component {
     render() {
         const { url, category } = this.state;
         return (
-            <Wrapper>
-                <Title>ADD VIDEO</Title>
+            <Wrapper className="col-sm-4 offset-md-4">
+                <Title className="mb-4">ADD VIDEO</Title>
 
                 <Label>URL: </Label>
                 <InputText
@@ -144,7 +144,7 @@ class VideoInsert extends Component {
                     onChange={this.handleChangeInputUrl}
                 />
 
-                <Label>CATEGORY: </Label>
+                <Label className="mt-4">CATEGORY: </Label>
 
                 <Select
                     type="text"
@@ -157,9 +157,10 @@ class VideoInsert extends Component {
                     <option value="SKATE">SKATE</option>
                 </Select>
 
-                <Button onClick={this.handleIncludeVideo}>ADD VIDEO</Button>
-                {/* <CancelButton href={'/admin/videos/list'}>CANCEL</CancelButton> */}
-                <Link to="/admin/videos/list" className="btn btn-danger"> CANCEL </Link>
+                <div className="mt-4">
+                    <Button onClick={this.handleIncludeVideo}>ADD VIDEO</Button>
+                    <Link to="/admin/videos/list" className="btn btn-danger"> CANCEL </Link>
+                </div>
             </Wrapper>
         )
     }
