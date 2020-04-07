@@ -75,4 +75,4 @@ class LoginPage extends React.Component {
     }
 }
 
-export { LoginPage }; 
+export default LoginPage; 
