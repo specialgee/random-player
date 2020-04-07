@@ -10,7 +10,7 @@ const Collapse = styled.div.attrs({
 })``
 
 const List = styled.div.attrs({
-    className: 'navbar-nav mr-auto',
+    className: 'navbar-nav',
 })``
 
 const Item = styled.div.attrs({
@@ -28,10 +28,15 @@ class Links extends Component {
         return (
             <React.Fragment>
                 <Link to="/admin" className="navbar-brand">
-                    RANDOM PLAYER
+                    ADMIN
                 </Link>
                 <Collapse>
-                    <List>
+                    <List className="mr-auto">
+                        <Item>
+                            <a href="/" className="nav-link">
+                                HOME
+                            </a>
+                        </Item>
                         <Item>
                             <Link to="/admin/videos/list" className="nav-link">
                                 LIST
@@ -42,6 +47,8 @@ class Links extends Component {
                                 ADD VIDEO
                             </Link>
                         </Item>
+                    </List>
+                    <List className="navbar-right ml-auto">
                         <Item>
                             <Link to="/login" className="nav-link" onClick={this.logout}>
                                 LOGOUT
