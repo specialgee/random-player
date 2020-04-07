@@ -9,10 +9,18 @@ body {
     height: 75vh;
 }
 
+.nav-link {
+    padding: 5px;
+}
+
 .jumbotron {
     background-color: #000;
     border-radius: 0;
     border-bottom: 1px solid #fff;
+}
+
+.jumbotron h2 {
+    font-size: 2rem;
 }
 
 .form-control {
@@ -22,16 +30,58 @@ body {
     border-radius: 0;
 }
 
-.form-group {
-    margin-top: 100px !important;
+.form-group h1 {
+    font-size: 2rem;
 }
 
-.form-group h1 {
+.form-insert {
+    margin-top: 100px;
+    border: 1px solid #fff;
+    padding: 25px;
+}
+
+.form-insert h1 {
     font-size: 2rem;
 }
 
 .btn {
     border-radius: 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #000;
+    border-color: #fff;
+}
+
+.btn-primary:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #000;
+    border-color: #fff;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #000;
+    border-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.5);
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #f00;
+    border-color: #f00;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #000;
+    border-color: #f00;
 }
 
 .alert {
@@ -71,4 +121,23 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #fff;
+}
+
+
+@media screen and (max-height: 680px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-link {
+        padding: 0px;
+    }
+
+    .form-insert {
+        margin-top: 0px;
+    }
+
+    .form-insert h1 {
+        font-size: 1.5rem;
+    }
 }
