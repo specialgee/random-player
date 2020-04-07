@@ -2,6 +2,24 @@ body {
     background-color: #000;
 }
 
+.stripes {
+    position: fixed;
+    width: 10px;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #000000 25%, #ffd900 25%, #ffd900 50%, #000000 50%, #000000 75%, #ffd900 75%, #ffd900 100%);
+    background-size: 56.57px 56.57px;
+}
+
+.stripes-right {
+    right: 0;
+}
+
+.login-container {
+    border: 1px solid #fff;
+    padding: 20px;
+    margin-top: 120px;
+}
+  
 .adminLogo{
     display: flex;
     justify-content: center;
@@ -16,7 +34,6 @@ body {
 .jumbotron {
     background-color: #000;
     border-radius: 0;
-    border-bottom: 1px solid #fff;
 }
 
 .jumbotron h2 {
