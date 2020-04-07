@@ -501,10 +501,16 @@
     user-select: none
 }
 
-@media screen and (max-height: 680px) {
-
+@media screen and (max-height: 740px) {
     .ReactTable {
-        height: 380px;
+        height: 450px !important;
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .ReactTable {
+        height: 380px !important;
         margin-top: 20px;
     }
 }
+
