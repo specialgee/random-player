@@ -1,0 +1,74 @@
+body {
+    background-color: #000;
+}
+
+.adminLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+.jumbotron {
+    background-color: #000;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+}
+
+.form-control {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0;
+}
+
+.form-group {
+    margin-top: 100px !important;
+}
+
+.form-group h1 {
+    font-size: 2rem;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.alert {
+    border-radius: 0;
+}
+
+.deleteLink {
+    color: #ff0000;
+}
+
+.deleteLink:hover {
+    color: rgb(255, 195, 195);
+    text-decoration: none;
+}
+
+.updateLink {
+    color: #ef9b0f;
+}
+
+.updateLink:hover {
+    color: #ebcf9f;
+    text-decoration: none;
+}
+
+/* Table Scrollbar */
+/* Width */
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
