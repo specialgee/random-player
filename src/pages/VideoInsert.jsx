@@ -13,19 +13,19 @@ const Title = styled.h1.attrs({
 })``
 
 const Wrapper = styled.div.attrs({
-    className: 'form-group',
+    className: 'form-insert',
 })`
-    margin: 0 30px;
+    
 `
 
 const Label = styled.label`
-    margin: 5px;
+    
 `
 
 const InputText = styled.input.attrs({
     className: 'form-control',
 })`
-    margin: 5px;
+    
 `
 
 const Select = styled.select.attrs({
