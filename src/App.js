@@ -442,7 +442,7 @@ class App extends React.Component {
                 <div className="jumbotron">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-4 offset-md-4">
+                            <div className="login-container col-sm-4 offset-md-4">
                                 {/* <PrivateRoute exact path="/" component={HomePage} /> */}
                                 <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
                                 <Route path="/login" component={LoginPage} />

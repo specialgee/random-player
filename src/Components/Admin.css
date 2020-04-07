@@ -125,6 +125,10 @@ body {
 
 
 @media screen and (max-height: 680px) {
+    .login-container {
+        margin-top: 20px;
+    }
+
     .navbar {
         padding: 0;
     }
