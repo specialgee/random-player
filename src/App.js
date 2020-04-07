@@ -363,7 +363,7 @@ class VideoPlayer extends React.Component {
     return (
       <div className="align-items-center justify-content-center">
         <div id="video-container" className="embed-responsive">
-          <div id="logo-container" className="fade-out">
+          <div id="logo-container">
             <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
           </div>
           <div id="video-player" className="hide">
