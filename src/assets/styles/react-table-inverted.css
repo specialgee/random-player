@@ -500,3 +500,11 @@
     -ms-user-select: none;
     user-select: none
 }
+
+@media screen and (max-height: 680px) {
+
+    .ReactTable {
+        height: 380px;
+        margin-top: 20px;
+    }
+}
