@@ -47,6 +47,30 @@ body {
     border-radius: 0;
 }
 
+.form-control:focus {
+    color: #fff !important;
+    background-color: transparent !important;
+    border-color: #fff;
+    outline: 0;
+}
+
+/* Input autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #000 inset !important;
+}
+
+/* Input autofill text color*/
+input:-webkit-autofill {
+    -webkit-text-fill-color: #fff !important;
+}
+
+option { 
+    background-color: #000;
+}
+
 .form-group h1 {
     font-size: 2rem;
 }
