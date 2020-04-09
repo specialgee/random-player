@@ -1,5 +1,5 @@
 ﻿const config = {
-    apiUrl: 'http://localhost:3000'
+    apiUrl: process.env.REACT_APP_SERVER_URL
 };
 
 export default config;
