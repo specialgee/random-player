@@ -149,7 +149,7 @@ class VideoList extends Component {
                         data={videos}
                         columns={columns}
                         loading={isLoading}
-                        defaultPageSize={20}
+                        defaultPageSize={50}
                         showPageSizeOptions={true}
                         minRows={0}
                         style={{
