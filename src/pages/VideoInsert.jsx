@@ -6,6 +6,8 @@ import styled from 'styled-components';
 
 import getYoutubeTitle from 'get-youtube-title';
 
+//import data from '../data.json'
+
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 const Title = styled.h1.attrs({
@@ -88,11 +90,64 @@ class VideoInsert extends Component {
         this.setState({ category });
     }
 
+    // handleIncludeDataFromFile = async () => {
+    //     const _this = this;
+
+    //     console.log("FILE: ", data);
+
+    //     data.map( (data) => {        
+    //         let skate = data.category.skate;
+        
+    //         skate.forEach(element => {
+    //             console.log(element);
+
+    //             _this.state.url = element.id;
+    //             _this.state.category = "SKATE";
+
+    //             const { title, url, category } = _this.state;
+
+    //             let payload = { title, url, category };
+                
+    //             new Promise((resolve, reject) => {
+    //                 console.log(_this.state)
+    //                 getYoutubeTitle(_this.state.url, API_KEY, function (err, title) {
+    //                     console.log("TITLE: ", title);
+    //                     if (err) console.log("ERROR: ", err);
+        
+    //                     _this.setState({ title });
+    //                     payload.title = title;
+                        
+    //                     resolve();
+    //                 })    
+    //             }).then(() => {
+    //                 api.insertVideo(payload)
+    //                 .then(res => {
+    //                     console.log('Video inserted successfully');
+    //                     this.setState({
+    //                         title: '',
+    //                         url: '',
+    //                         category: '',
+    //                     })
+    //                 }).finally(() => {
+    //                     //window.location.href = `/admin`;
+    //                 });
+        
+    //             }).catch(() => {
+            
+    //             }).finally(() => {
+            
+    //             });    
+
+                
+    //         });
+    //     })
+    // }
+
     handleIncludeVideo = async () => {
         const _this = this;
 
         const { title, url, category } = this.state;
-
+        
         if (!url) {
             alert("Please add URL");
         } else if (!category) {
