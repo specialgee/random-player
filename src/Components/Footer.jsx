@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         const year = String(new Date().getFullYear());
-        console.log(year);
 
         return (
             <div id="footer">
