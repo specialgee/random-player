@@ -179,3 +179,9 @@
 @media only screen and (min-width: 1900px) {
 
 }
+
+@media screen and (min-height: 960px) {
+  #logo-container {
+    top: 20%;
+  }
+}
