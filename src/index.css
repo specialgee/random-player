@@ -15,3 +15,139 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.center {
+  margin: auto;
+  width: 60%;
+}
+
+.hide {
+  display: none;
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 1.8s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* LOADING */
+
+#loading-container {
+  position: fixed;
+  z-index: 999;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+ .dot-falling {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #fff;
+  box-shadow: 9999px 0 0 0 #fff;
+  animation: dot-falling 1s infinite linear;
+  animation-delay: .1s;
+}
+
+.dot-falling::before, .dot-falling::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-falling::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #fff;
+  animation: dot-falling-before 1s infinite linear;
+  animation-delay: 0s;
+  left: -5px;
+}
+
+.dot-falling::after {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #fff;
+  animation: dot-falling-after 1s infinite linear;
+  animation-delay: .2s;
+}
+
+@keyframes dot-falling {
+  0% {
+    box-shadow: 9999px -15px 0 0 rgba(255, 255, 255, 0);
+  }
+  25%,
+  50%,
+  75% {
+    box-shadow: 9999px 0 0 0 white;
+  }
+  100% {
+    box-shadow: 9999px 15px 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes dot-falling-before {
+  0% {
+    box-shadow: 9984px -15px 0 0 rgba(255, 255, 255, 0);
+  }
+  25%,
+  50%,
+  75% {
+    box-shadow: 9984px 0 0 0 white;
+  }
+  100% {
+    box-shadow: 9984px 15px 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes dot-falling-after {
+  0% {
+    box-shadow: 10014px -15px 0 0 rgba(255, 255, 255, 0);
+  }
+  25%,
+  50%,
+  75% {
+    box-shadow: 10014px 0 0 0 white;
+  }
+  100% {
+    box-shadow: 10014px 15px 0 0 rgba(255, 255, 255, 0);
+  }
+}

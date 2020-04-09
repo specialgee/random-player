@@ -305,7 +305,6 @@ class VideoPlayer extends React.Component {
       if (!this.showPlayer) {
         const logoContainer = document.getElementById("logo-container");
 
-        const videoContainer = document.getElementById("video-container");
         const videoPlayer = document.getElementById("video-player");
         const videoIframe = videoPlayer.children[0].children[0];
 

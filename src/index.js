@@ -12,10 +12,17 @@ const start = async () => {
     await api.getAllVideos().then(videos => {
         data = videos.data.data;
     }).then( () => {
-        ReactDOM.render(
-            <App appData={JSON.stringify(data)}/>,
-            document.getElementById('root')
-        );        
+        const loadingContainer = document.getElementById("loading-container");
+        loadingContainer.classList.add("fade-out");
+        loadingContainer.addEventListener("animationend", () => {
+            loadingContainer.classList.add("hide");
+
+            document.getElementById('root').classList.add("fade-in");
+            ReactDOM.render(
+                <App appData={JSON.stringify(data)}/>,
+                document.getElementById('root')
+            );            
+        });
     }).catch(() => {
 
     }).finally(() => {
