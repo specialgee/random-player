@@ -304,6 +304,7 @@ class VideoPlayer extends React.Component {
     }).then(() => {
       if (!this.showPlayer) {
         const logoContainer = document.getElementById("logo-container");
+
         const videoContainer = document.getElementById("video-container");
         const videoPlayer = document.getElementById("video-player");
         const videoIframe = videoPlayer.children[0].children[0];
@@ -314,10 +315,6 @@ class VideoPlayer extends React.Component {
 
 
         logoContainer.classList.add("fade-out");
-        //logoContainer.classList.add("fade-out");
-        
-        //videoPlayer.classList.remove("hide");
-        //videoContainer.classList.add("embed-responsive-16by9");
 
         videoIframe.classList.add("fade-in");
 
@@ -326,17 +323,8 @@ class VideoPlayer extends React.Component {
         categorySkateElement.classList.add("fade-in");
 
         logoContainer.addEventListener("animationend", () => {
-          console.log('animation ended');
           logoContainer.classList.add("hide");
-
-          
         });
-
-        // videoPlayer.addEventListener("animationend", () => {
-        //   console.log('animation ended');
-
-        // });
-
       }
 
       this.showPlayer = true;
