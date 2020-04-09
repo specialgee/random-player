@@ -6,6 +6,7 @@ import { authenticationService } from './services';
 import { PrivateRoute } from './components/PrivateRoute';
 import { LoginPage } from './pages';
 import Admin from './components/Admin';
+import Footer from './components/Footer';
 import './App.css';
 import  musicImage from './assets/img/button-music.jpg';
 import  musicImageActive from './assets/img/button-music-active.jpg';
@@ -388,7 +389,7 @@ class VideoPlayer extends React.Component {
             <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
           </div>
         </div>
-        <div id="category-container">
+        <div id="category-container" className="embed-responsive">
           <img id="category-music" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
           <img id="category-rap" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImage} width="178" height="33" alt=""/>
           <img id="category-skate" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skateImage} width="178" height="33" alt=""/>
@@ -438,6 +439,7 @@ class App extends React.Component {
                   <div className="col-12">
                     <VideoPlayer ref={this.videoPlayerRef} />
                     {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
+                    <Footer />
                   </div>
                 </div>
               </div>    

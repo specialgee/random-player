@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { NavBar } from '../components';
 import { AdminPage, VideoList, VideoInsert, VideoUpdate } from '../pages';
+import Footer from './Footer';
 
 import 'bootswatch/dist/darkly/bootstrap.min.css';
 import './Admin.css';
@@ -20,6 +21,7 @@ function Admin() {
                 <Route path="/admin/videos/update/:id" component={VideoUpdate} />
                 <Route path="/"  component={AdminPage} />
             </Switch>
+            <Footer />
         </BrowserRouter>
     )
 }
