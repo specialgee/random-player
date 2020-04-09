@@ -91,6 +91,7 @@ class VideoInsert extends Component {
     }
 
     // handleIncludeDataFromFile = async () => {
+    //      // /!\ REMEMBER TO ADD [] AT START AND END OF JSON FILE
     //     const _this = this;
 
     //     console.log("FILE: ", data);
