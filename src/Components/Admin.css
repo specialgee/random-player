@@ -104,13 +104,14 @@ option {
     color: #fff;
     background-color: #000;
     border-color: #fff;
+    box-shadow: none;
 }
 
 .btn-primary:focus, .btn-primary.focus {
     color: #fff;
     background-color: #000;
     border-color: #fff;
-    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.5);
+    box-shadow: none;
 }
 
 .btn-danger {
