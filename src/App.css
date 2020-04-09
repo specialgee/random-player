@@ -14,6 +14,17 @@
   max-width: 1000px;
 }
 
+#logo-container {
+  opacity: 1;
+  z-index: 1;
+  margin: auto;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 #quarantine-logo {
   width: 100%;
   max-width: 480px;
@@ -23,8 +34,9 @@
   cursor: pointer;
 }
 
-.hide {
-  display: none;
+#video-player iframe {
+  opacity: 0;
+  display: inline;
 }
 
 #views-container {
@@ -42,7 +54,8 @@
 }
 
 #category-container {
-  margin-top: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 /*
@@ -65,43 +78,61 @@
   outline:none;
 }
 
-/* .navbar-nav {
-  float:none;
-  margin:0 auto;
-  display: block;
-  text-align: center;
+.category-image:hover {
+  cursor: pointer;
 }
 
-.navbar-nav > li {
-  display: inline-block;
-  float:none;
+#category-music {
+  opacity: 0;
+  background-image: url(./assets/img/button-music.jpg);
 }
 
-.nav-link {
-  top: 0;
-  left: 0;
-  position: fixed;
-} */
+#category-rap {
+  opacity: 0;
+  background-image: url(./assets/img/button-rap.jpg);
+}
+
+#category-skate {
+  opacity: 0;
+  background-image: url(./assets/img/button-skate.jpg);
+}
 
 .center {
   margin: auto;
   width: 60%;
 }
 
-.category-image:hover {
-  cursor: pointer;
+.hide {
+  display: none;
 }
 
-#category-music {
-  background-image: url(./assets/img/button-music.jpg);
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-#category-rap {
-  background-image: url(./assets/img/button-rap.jpg);
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-#category-skate {
-  background-image: url(./assets/img/button-skate.jpg);
+/* Animation keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 /* Extra small devices (phones, 600px and down) */
