@@ -11,11 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -34,6 +29,16 @@ code {
   margin-bottom: 20px;
   font-size: 10px;
   text-align: center;
+  z-index: 2;
+}
+
+#footer p {
+  color: #fff;
+}
+
+#footer a {
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 .hide {
