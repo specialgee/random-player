@@ -58,15 +58,8 @@
   z-index: 2;
 }
 
-/*
 #video-button-container {
-  width: 60%;
-  margin: 0 auto;
-}
-*/
-
-#video-button-container {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #video-button {
