@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router, Switch, Route, Link } from 'react-router-dom';
+import YouTube from 'react-youtube';
 import { history, Role } from './helpers';
 import { authenticationService } from './services';
 import { PrivateRoute } from './components/PrivateRoute';
 import { LoginPage } from './pages';
 import Admin from './components/Admin';
-import YouTube from 'react-youtube';
 import './App.css';
 import  musicImage from './assets/img/button-music.jpg';
 import  musicImageActive from './assets/img/button-music-active.jpg';
@@ -302,10 +302,41 @@ class VideoPlayer extends React.Component {
         videoId: randomData.id
       });
     }).then(() => {
-      if (document.getElementById("video-player").classList.contains("hide") && !this.showPlayer) {
-        document.getElementById("video-container").classList.add("embed-responsive-16by9");
-        document.getElementById("logo-container").classList.add("hide");
-        document.getElementById("video-player").classList.remove("hide");        
+      if (!this.showPlayer) {
+        const logoContainer = document.getElementById("logo-container");
+        const videoContainer = document.getElementById("video-container");
+        const videoPlayer = document.getElementById("video-player");
+        const videoIframe = videoPlayer.children[0].children[0];
+
+        const categoryMusicElement = document.getElementById("category-music");
+        const categoryRapElement = document.getElementById("category-rap");
+        const categorySkateElement = document.getElementById("category-skate");
+
+
+        logoContainer.classList.add("fade-out");
+        //logoContainer.classList.add("fade-out");
+        
+        //videoPlayer.classList.remove("hide");
+        //videoContainer.classList.add("embed-responsive-16by9");
+
+        videoIframe.classList.add("fade-in");
+
+        categoryMusicElement.classList.add("fade-in");
+        categoryRapElement.classList.add("fade-in");
+        categorySkateElement.classList.add("fade-in");
+
+        logoContainer.addEventListener("animationend", () => {
+          console.log('animation ended');
+          logoContainer.classList.add("hide");
+
+          
+        });
+
+        // videoPlayer.addEventListener("animationend", () => {
+        //   console.log('animation ended');
+
+        // });
+
       }
 
       this.showPlayer = true;
@@ -362,17 +393,14 @@ class VideoPlayer extends React.Component {
 
     return (
       <div className="align-items-center justify-content-center">
-        <div id="video-container" className="embed-responsive">
-          <div id="logo-container">
-            <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
-          </div>
-          <div id="video-player" className="hide">
+        <div id="logo-container">
+          <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
+        </div>
+        <div id="video-container" className="embed-responsive embed-responsive-16by9">
+          <div id="video-player" className="">
             <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
           </div>
         </div>
-        {/* <div id="views-container">
-          <p id="views">100</p><p>views</p>
-        </div> */}
         <div id="category-container">
           <img id="category-music" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
           <img id="category-rap" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImage} width="178" height="33" alt=""/>
