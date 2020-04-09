@@ -1,5 +1,5 @@
 ﻿const config = {
-    apiUrl: 'https://random-player-server.herokuapp.com'
+    apiUrl: 'http://localhost:3000'
 };
 
 export default config;
