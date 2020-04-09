@@ -90,9 +90,9 @@ option {
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #000;
-    border-color: #fff;
+    color: #fff !important;
+    background-color: #000 !important;
+    border-color: #fff !important;
 }
 
 .btn-primary:hover {
