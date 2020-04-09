@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://random-player-server.herokuapp.com/api',
+    baseURL: 'localhost:3000/api',
 })
 
 export const insertVideo = payload => api.post(`/video`, payload);
