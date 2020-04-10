@@ -197,8 +197,19 @@
 
 }
 
-@media screen and (min-height: 960px) {
-  #logo-container {
-    top: 30%;
+/* Mobile landscape mode */
+@media (orientation: landscape) and (max-device-width : 960px) {
+  #category-container {
+    display: none;
   }
+
+  #video-button-container {
+    display: none;
+  }
+}
+
+
+/* Large screens height */
+@media screen and (min-height: 960px) {
+
 }
