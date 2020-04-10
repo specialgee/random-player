@@ -62,7 +62,6 @@ function setCategory() {
       default:
         break;
     }
-    
     setActive();
   }
 }
@@ -74,7 +73,7 @@ function setCategory() {
 // }
 
 function setActive() {
-  let categoryImages = document.getElementById("category-container").childNodes;
+  let categoryImages = document.querySelectorAll('#category-container img');
       
   categoryImages.forEach(element => {
     if (element.classList.contains("category-active")) {
@@ -368,6 +367,8 @@ class VideoPlayer extends React.Component {
     
     new Promise((resolve, reject) => {
       resolve();
+    }).then(() => {
+      setActive();
     }).then(() => {
       this.onUpdateVideo();    
     }).catch(() => {
