@@ -13,8 +13,8 @@ class Links extends Component {
             <React.Fragment>
                 <Nav className="mr-auto">
                 <Nav.Link className="nav-link" href="/">HOME</Nav.Link>
-                <Nav.Link className="nav-link" href="/admin/videos/list">LIST</Nav.Link>
-                <Nav.Link className="nav-link" href="/admin/videos/create">ADD VIDEO</Nav.Link>
+                <Nav.Link className="nav-link" href={process.env.PUBLIC_URL + "/admin/videos/list"}>LIST</Nav.Link>
+                <Nav.Link className="nav-link" href={process.env.PUBLIC_URL + "/admin/videos/create"}>ADD VIDEO</Nav.Link>
                 </Nav>
                 <Button className="nav-link mr-sm-2 pr-4" onClick={this.logout}>LOGOUT</Button>
             </React.Fragment>

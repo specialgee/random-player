@@ -6,7 +6,7 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar className="admin-container" expand="lg">
-            <Navbar.Brand className="ml-4" href="/admin">ADMIN</Navbar.Brand>
+            <Navbar.Brand className="ml-4" href={process.env.PUBLIC_URL + "/admin"}>ADMIN</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Links />                
