@@ -315,16 +315,26 @@ class VideoPlayer extends React.Component {
 
 
         logoContainer.classList.add("fade-out");
+        logoContainer.addEventListener("animationend", () => {
+          logoContainer.classList.add("hide");
+        });
 
         videoIframe.classList.add("fade-in");
+        videoIframe.addEventListener("animationend", () => {
+          //logoContainer.classList.add("hide");
+
+          categoryMusicElement.style.opacity = 1;
+          categoryRapElement.style.opacity = 1;
+          categorySkateElement.style.opacity = 1;
+          
+          categoryMusicElement.classList.remove("fade-in");
+          categoryRapElement.classList.remove("fade-in");
+          categorySkateElement.classList.remove("fade-in"); 
+        });
 
         categoryMusicElement.classList.add("fade-in");
         categoryRapElement.classList.add("fade-in");
         categorySkateElement.classList.add("fade-in");
-
-        logoContainer.addEventListener("animationend", () => {
-          logoContainer.classList.add("hide");
-        });
       }
 
       this.showPlayer = true;
