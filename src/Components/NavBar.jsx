@@ -1,30 +1,40 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 
 import Links from './Links';
 
-const Container = styled.div.attrs({
-    className: 'container',
-})`
-    height: 150px;
-`
+import { Navbar } from 'react-bootstrap';
 
-const Nav = styled.nav.attrs({
-    className: 'navbar navbar-expand-lg navbar-dark',
-})`
-    margin-bottom: 20 px;
-    background-color: #000;
-    border-bottom: 1px solid #fff;
-`
+// const Container = styled.div.attrs({
+//     className: 'admin-container',
+// })`
+//     height: 150px;
+// `
+
+// const Nav = styled.nav.attrs({
+//     className: 'navbar navbar-expand-lg navbar-dark',
+// })`
+//     margin-bottom: 20 px;
+//     background-color: #000;
+//     border-bottom: 1px solid #fff;
+// `
 
 class NavBar extends Component {
     render() {
         return (
-            <Container>
-                <Nav>
-                    <Links />
-                </Nav>
-            </Container>
+            // <Container>
+            //     <Nav>
+            //         <Links />
+            //     </Nav>
+            // </Container>
+
+            <Navbar className="admin-container" expand="lg">
+            <Navbar.Brand className="ml-4" href="/admin">ADMIN</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Links />                
+            </Navbar.Collapse>
+            </Navbar>
         )
     }
 }
