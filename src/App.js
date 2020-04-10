@@ -364,9 +364,17 @@ class VideoPlayer extends React.Component {
   }
 
   onChangeCategory(e) {
-    setMenuCategory(e);
+    category = e.target.id.substring(9);
+    
+    new Promise((resolve, reject) => {
+      resolve();
+    }).then(() => {
+      this.onUpdateVideo();    
+    }).catch(() => {
 
-    this.onRandomVideo();    
+    }).finally(() => {
+
+    });    
   }
 
   onShowVideoPlayer() {
