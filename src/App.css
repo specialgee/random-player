@@ -19,7 +19,7 @@
   z-index: 1;
   margin: auto;
   position: absolute;
-  top: 50px;
+  top: 0px;
   left: 0;
   bottom: 0;
   right: 0;
@@ -28,6 +28,12 @@
 #quarantine-logo {
   width: 100%;
   max-width: 480px;
+  height: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }
 
 #quarantine-logo:hover {
@@ -37,6 +43,76 @@
 #video-player iframe {
   opacity: 0;
   display: inline;
+}
+
+#category-container {
+  position: relative;
+  z-index: 2;
+}
+
+#category-container button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor:'pointer'
+}
+
+#category-container button:active, #category-container button:focus {
+  outline: none;
+}
+
+.category-image {
+  cursor:'pointer';
+}
+
+.category-image:hover {
+  cursor: pointer;
+}
+
+#category-music {
+  width: 100%;
+  max-width: 178px;
+  height: auto;
+  opacity: 0;
+  background-image: url(./assets/img/button-music.jpg);
+}
+
+#category-rap {
+  width: 100%;
+  max-width: 178px;
+  height: auto;
+  margin: 0 auto;
+  opacity: 0;
+  background-image: url(./assets/img/button-rap.jpg);
+}
+
+#category-skate {
+  width: 100%;
+  max-width: 178px;
+  height: auto;
+  opacity: 0;
+  background-image: url(./assets/img/button-skate.jpg);
+}
+
+#video-button-container {
+  position: relative;
+  top: 20px;
+  z-index: 2;
+}
+
+#video-button {
+  background: black;
+  border: 0;
+}
+
+#video-button:focus {
+  outline:none;
+}
+
+#video-button-img {
+  width: 100%;
+  max-width: 164px;
+  height: auto;
 }
 
 #views-container {
@@ -53,46 +129,32 @@
   margin-right: 10px;
 }
 
-#category-container {
-  position: relative;
-  z-index: 2;
-}
-
-#video-button-container {
-  margin-top: 20px;
-}
-
-#video-button {
-  background: black;
-  border: 0;
-}
-
-#video-button:focus {
-  outline:none;
-}
-
-.category-image:hover {
-  cursor: pointer;
-}
-
-#category-music {
-  opacity: 0;
-  background-image: url(./assets/img/button-music.jpg);
-}
-
-#category-rap {
-  opacity: 0;
-  background-image: url(./assets/img/button-rap.jpg);
-}
-
-#category-skate {
-  opacity: 0;
-  background-image: url(./assets/img/button-skate.jpg);
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  #category-container {
+    top: 60px;
+  }
+  
+  #category-music {
+    max-width: 158px;
+  }
+  
+  #category-rap {
+    max-width: 158px;
+    display: flex;
+  }
+  
+  #category-skate {
+    max-width: 158px;
+  }
 
+  #video-button-container {
+    top: 70px;
+  }  
+
+  #video-button-img {
+    max-width: 124px;
+  }  
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
