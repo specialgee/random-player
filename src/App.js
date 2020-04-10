@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import { history, Role } from './helpers';
 import { authenticationService } from './services';
@@ -448,7 +448,7 @@ class App extends React.Component {
     const { currentUser, isAdmin } = this.state;
 
     return (
-      <Router history={history} basename={process.env.PUBLIC_URL}>
+      <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/">
             <div className="App">
@@ -488,7 +488,7 @@ class App extends React.Component {
             </div>
           </Route>
         </Switch>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
