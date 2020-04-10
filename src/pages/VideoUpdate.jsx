@@ -119,7 +119,7 @@ class VideoUpdate extends Component {
     render() {
         const { title, url, category } = this.state;
         return (
-            <Wrapper className="col-sm-4 offset-md-4">
+            <Wrapper className="col-sm-4 offset-md-4 update-form">
                 <Title className="mb-4" >UPDATE VIDEO</Title>
 
                 <Label>TITLE: </Label>
