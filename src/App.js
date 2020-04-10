@@ -67,11 +67,11 @@ function setCategory() {
   }
 }
 
-function setMenuCategory(e) {
-  category = e.target.id.substring(9);
+// function setMenuCategory(e) {
+//   category = e.target.id.substring(9);
 
-  setActive();
-}
+//   setActive();
+// }
 
 function setActive() {
   let categoryImages = document.getElementById("category-container").childNodes;
@@ -243,8 +243,8 @@ class RandomButton extends React.Component {
   render() {
     return (
       <div id="video-button-container">
-        <button id="video-button" className="video-button" onClick={this.props.onClick}>
-          <img src={nextButtonImage} width="164" height="80" alt=""/>
+        <button id="video-button" onClick={this.props.onClick}>
+          <img id="video-button-img" src={nextButtonImage} width="164" height="80" alt=""/>
         </button>
       </div>
     );
@@ -408,11 +408,11 @@ class VideoPlayer extends React.Component {
           </div>
         </div>
         <div id="category-container" className="embed-responsive">
-          <img id="category-music" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={musicImage} width="178" height="33" alt=""/>
-          <img id="category-rap" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={rapImage} width="178" height="33" alt=""/>
-          <img id="category-skate" className="category-image mt-3" onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} src={skateImage} width="178" height="33" alt=""/>
-          <RandomButton onClick={this.onUpdateVideo} />
+          <button onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img id="category-music" className="category-image mt-3" src={musicImage}  width="178" height="33" alt="music category"/></button>
+          <button onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img id="category-rap" className="category-image mt-3" src={rapImage} width="178" height="33" alt="rap category"/></button>
+          <button onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img id="category-skate" className="category-image mt-3" src={skateImage} width="178" height="33" alt="skate category"/></button>
         </div>
+        <RandomButton onClick={this.onUpdateVideo} />
       </div>
     );
   }
