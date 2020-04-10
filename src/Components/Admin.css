@@ -39,7 +39,6 @@ body {
 .nav-link {
     color: #fff;
     padding: 5px;
-    margin-bottom: 10px;
     font-weight: bold;
     border: 0px;
 }
@@ -207,6 +206,7 @@ option {
 
     .nav-link {
         padding: 0px;
+        margin-bottom: 10px;
     }
 
     .form-insert {
