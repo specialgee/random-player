@@ -501,6 +501,12 @@
     user-select: none
 }
 
+@media screen and (max-width: 640px) {
+    .ReactTable {
+        margin-top: 80px !important;
+    }
+}
+
 @media screen and (max-height: 740px) {
     .ReactTable {
         height: 450px !important;
@@ -510,6 +516,14 @@
 @media screen and (max-height: 680px) {
     .ReactTable {
         height: 380px !important;
+        margin-top: 100px;
+    }
+}
+
+/* Mobile landscape mode */
+@media (orientation: landscape) and (max-device-width : 960px) {
+    .ReactTable {
+        height: 300px !important;
         margin-top: 20px;
     }
 }
