@@ -71,7 +71,7 @@ class App extends React.Component {
               <div className="app-container w-50">
                 <div className="row">
                   <div className="col-12">
-                    <VideoPlayer ref={this.videoPlayerRef} />
+                    <VideoPlayer data={data} ref={this.videoPlayerRef} />
                     {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
                     <Footer />
                   </div>
