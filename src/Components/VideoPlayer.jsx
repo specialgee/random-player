@@ -32,12 +32,6 @@ function setCategory(data) {
     }
 }
 
-// function setMenuCategory(e) {
-//   category = e.target.id.substring(9);
-
-//   setActive();
-// }
-
 function setActive() {
     let categoryImages = document.querySelectorAll('#category-container img');
 
