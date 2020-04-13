@@ -157,6 +157,22 @@
   }  
 }
 
+/* Mobile landscape mode */
+@media (orientation: landscape) and (max-device-width : 960px) {
+  #category-container {
+    display: none;
+  }
+
+  #video-button-container {
+    display: none;
+  }
+}
+
+/* Large screens height */
+@media screen and (min-height: 960px) {
+
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
@@ -194,22 +210,5 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1900px) {
-
-}
-
-/* Mobile landscape mode */
-@media (orientation: landscape) and (max-device-width : 960px) {
-  #category-container {
-    display: none;
-  }
-
-  #video-button-container {
-    display: none;
-  }
-}
-
-
-/* Large screens height */
-@media screen and (min-height: 960px) {
 
 }

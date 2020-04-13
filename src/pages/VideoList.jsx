@@ -11,16 +11,6 @@ const Wrapper = styled.div`
 
 `
 
-// const Update = styled.div`
-//     color: #ef9b0f;
-//     cursor: pointer;
-// `
-
-// const Delete = styled.div`
-//     color: #ff0000;
-//     cursor: pointer;
-// `
-
 class UpdateVideo extends Component {
     // updateEntry = event => {
     //     event.preventDefault();
@@ -40,11 +30,6 @@ class DeleteVideo extends Component {
                 `Do you want to delete the video ${this.props.id} permanently?`,
             )
         ) {
-            // // await api.deleteVideoById(this.props.id).then( () => {
-            // //     window.location.reload(true);
-            // //     //history.replace('/')
-            // // });
-
             new Promise((resolve, reject) => {
                 api.deleteVideoById(this.props.id).then( () => {
                     resolve();

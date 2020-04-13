@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../api';
-
-import styled from 'styled-components';
-
 import getYoutubeTitle from 'get-youtube-title';
+import styled from 'styled-components';
+import api from '../api';
 
 //import data from '../data.json'
 
