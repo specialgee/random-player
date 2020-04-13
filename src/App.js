@@ -58,14 +58,13 @@ class App extends React.Component {
 
   logout() {
       authenticationService.logout();
-      history.push('/login');
   }
 
   render() {
     const { currentUser, isAdmin } = this.state;
 
     return (
-      <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/">
             <div className="App">
