@@ -256,8 +256,6 @@ class VideoPlayer extends React.Component {
 
                 videoIframe.classList.add("fade-in");
                 videoIframe.addEventListener("animationend", () => {
-                    //logoContainer.classList.add("hide");
-
                     categoryMusicElement.style.opacity = 1;
                     categoryRapElement.style.opacity = 1;
                     categorySkateElement.style.opacity = 1;
