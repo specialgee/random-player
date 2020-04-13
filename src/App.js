@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import YouTube from 'react-youtube';
+import { Role } from './helpers';
 import { authenticationService } from './services';
 import { LoginPage } from './pages';
+import { PrivateRoute } from './components/PrivateRoute';
 import Admin from './components/Admin';
+import VideoPlayer from './components/VideoPlayer';
 import Footer from './components/Footer';
 import './App.css';
 
