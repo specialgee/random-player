@@ -137,10 +137,6 @@ class VideoList extends Component {
                         defaultPageSize={50}
                         showPageSizeOptions={true}
                         minRows={0}
-                        style={{
-                            // Force the table body to overflow and scroll, since there is not enough room
-                            height: "500px"
-                        }}
                     />
                 )}
             </Wrapper>
