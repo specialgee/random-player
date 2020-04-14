@@ -100,9 +100,10 @@ option {
 }
 
 .form-insert {
-    margin-top: 150px;
+    margin-top: 0;
     border: 1px solid #fff;
     padding: 25px;
+    top: 20vh;
 }
 
 .form-insert h1 {
@@ -207,10 +208,6 @@ option {
     .nav-link {
         padding: 0px;
         margin-bottom: 10px;
-    }
-
-    .form-insert {
-        margin-top: 80px;
     }
 
     .form-insert h1 {
