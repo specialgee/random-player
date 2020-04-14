@@ -28,36 +28,14 @@ const InputText = styled.input.attrs({
 const Select = styled.select.attrs({
     className: 'form-control',
 })`
-  ${'' /* width: 100%;
-  height: 35px;
-  background: white;
-  color: gray;
-  padding-left: 5px;
-  font-size: 14px;
-  border: none;
-  margin-left: 10px;
 
-  option {
-    color: black;
-    background: white;
-    display: flex;
-    white-space: pre;
-    min-height: 20px;
-    padding: 0px 2px 1px;
-  } */}
-`;
+`
 
 const Button = styled.button.attrs({
     className: `btn btn-primary`,
 })`
     margin: 15px 15px 15px 5px;
 `
-
-// const CancelButton = styled.a.attrs({
-//     className: `btn btn-danger`,
-// })`
-//     margin: 15px 15px 15px 5px;
-// `
 
 class VideoUpdate extends Component {
     constructor(props) {
