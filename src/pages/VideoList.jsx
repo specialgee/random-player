@@ -12,12 +12,6 @@ const Wrapper = styled.div`
 `
 
 class UpdateVideo extends Component {
-    // updateEntry = event => {
-    //     event.preventDefault();
-
-    //     window.location.href = `/admin/videos/update/${this.props.id}`;        
-    // }
-
     render() {
         return <Link className="updateLink" to={`/admin/videos/update/${this.props.id}`} > Update </Link>
     }
@@ -39,7 +33,6 @@ class DeleteVideo extends Component {
             }).finally(() => {
                 window.location.reload(true);        
             });
-    
         }        
     }
 
