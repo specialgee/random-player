@@ -23,7 +23,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  height: 480px;
+  height: 150px;
 }
 
 #quarantine-logo {
@@ -149,7 +149,7 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   #logo-container {
-    height: auto;
+    height: 80px;
   }
 
   #deuspi-visual {
@@ -185,7 +185,7 @@
 /* Mobile landscape mode */
 @media (orientation: landscape) and (max-device-width : 960px) {
   #deuspi-visual {
-    top: 20vh;
+    top: -5vh;
   }
 
   #category-container {
@@ -220,7 +220,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
   #video-button-container {
-    top: 7vh;
+    top: 9vh;
   }
 }
 
