@@ -70,7 +70,7 @@ class App extends React.Component {
             <div className="App">
               <div className="app-container w-50">
                 <div className="row">
-                  <div className="col-12">
+                  <div className="col-lg">
                     <VideoPlayer data={data} ref={this.videoPlayerRef} />
                     {/* <button onClick={() => this.videoPlayerRef.current.onUpdateVideo()}>RANDOM</button> */}
                     <Footer />
