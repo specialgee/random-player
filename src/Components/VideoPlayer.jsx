@@ -7,7 +7,7 @@ import  rapImage from '../assets/img/button-rap.jpg';
 import  rapImageActive from '../assets/img/button-rap-active.jpg';
 import  skateImage from '../assets/img/button-skate.jpg';
 import  skateImageActive from '../assets/img/button-skate-active.jpg';
-import  quarantineImage from '../assets/img/quarantine-logo.gif';
+import  deuspiImage from '../assets/img/deuspi-visual.png';
 
 let category;
 
@@ -335,7 +335,7 @@ class VideoPlayer extends React.Component {
         return (
             <div className="align-items-center justify-content-center">
                 <div id="logo-container">
-                    <img id="quarantine-logo" onClick={this.onUpdateVideo} src={quarantineImage} width="480" height="268" alt=""/>
+                    <img id="deuspi-visual" onClick={this.onUpdateVideo} src={deuspiImage} alt=""/>
                 </div>
                 <div id="video-container" className="embed-responsive embed-responsive-16by9">
                     <div id="video-player" className="">
