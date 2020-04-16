@@ -107,9 +107,9 @@ code {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #fff;
-  color: #fff;
-  box-shadow: 9999px 0 0 0 #fff;
+  background-color: #ffcf00;
+  color: #ffcf00;
+  box-shadow: 9999px 0 0 0 #ffcf00;
   animation: dot-falling 1s infinite linear;
   animation-delay: .1s;
 }
@@ -125,8 +125,8 @@ code {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #fff;
-  color: #fff;
+  background-color: #ffcf00;
+  color: #ffcf00;
   animation: dot-falling-before 1s infinite linear;
   animation-delay: 0s;
   left: -5px;
