@@ -44,12 +44,12 @@ code {
 }
 
 #footer p {
-  color: #fff;
+  color: #000;
   margin-bottom: 0;
 }
 
 #footer a {
-  color: #fff !important;
+  color: #000 !important;
   text-decoration: none !important;
 }
 
