@@ -41,6 +41,14 @@ function getCategories(_data, item) {
   }
 }
 
+function parseItemsByCategory(_data, item) {
+  Object.keys(_data).forEach(category => {
+    if (item.category.toLowerCase() === category) {
+      _data[category].push(item);
+    }
+  })
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
