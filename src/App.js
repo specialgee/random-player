@@ -9,27 +9,35 @@ import VideoPlayer from './components/VideoPlayer';
 import Footer from './components/Footer';
 import './App.css';
 
-let data = {
-  music: [],
-  rap: [],
-  skate: []
-};
+let data = [];
 
-function parseData(appData) {  
+function parseData(appData) {
   JSON.parse(appData).forEach(element => {
-    switch (element.category) {
-      case "MUSIC":
-        data.music.push(element);
-        break;
-      case "RAP":
-        data.rap.push(element);
-        break;
-      case "SKATE":
-        data.skate.push(element);
-        break;
-      default:
-        break;
-    }
+    // switch (element.category) {
+    //   case "MUSIC":
+    //     dataOld.music.push(element);
+    //     break;
+    //   case "RAP":
+    //     dataOld.rap.push(element);
+    //     break;
+    //   case "SKATE":
+    //     dataOld.skate.push(element);
+    //     break;
+    //   default:
+    //     break;
+    // }
+    
+    new Promise((resolve, reject) => {
+      resolve();
+    }).then(() => {
+      getCategories(data, element);
+    }).then(() => {
+      parseItemsByCategory(data, element);        
+    }).catch(() => {
+
+    }).finally(() => {
+
+    });
   })
 
   console.log("DATA: ", data);
