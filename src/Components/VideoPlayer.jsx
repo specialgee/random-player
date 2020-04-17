@@ -12,24 +12,29 @@ import  deuspiImage from '../assets/img/deuspi-visual.png';
 let category;
 
 function setCategory(data) {
-    if (category === undefined) {
-        let index = Math.floor(Math.random() * Object.keys(data).length);
-
-        switch (index) {
-            case 0:
-                category = "music";
-                break;
-            case 1:
-                category = "rap";
-                break;
-            case 2:
-                category = "skate";
-                break;
-            default:
-                break;
-        }
-        setActive();
-    }
+    
+    let index = Math.floor(Math.random() * Object.keys(data).length);
+    
+    category = Object.keys(data)[index];
+    
+    // switch (index) {
+    //     case 0:
+    //         category = "music";
+    //         break;
+    //     case 1:
+    //         category = "rap";
+    //         break;
+    //     case 2:
+    //         category = "skate";
+    //         break;
+    //     default:
+    //         break;
+    // }
+    // setActive();
+}
+}
+}
+}
 }
 
 function setActive() {
