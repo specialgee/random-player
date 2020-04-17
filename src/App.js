@@ -35,6 +35,12 @@ function parseData(appData) {
   console.log("DATA: ", data);
 }
 
+function getCategories(_data, item) {
+  if (item.category !== Object.keys(_data)) {
+    _data[item.category.toLowerCase()] = [];
+  }
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
