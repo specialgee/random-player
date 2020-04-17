@@ -1,12 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import RandomButton from './RandomButton';
-// import  musicImage from '../assets/img/button-music.jpg';
-// import  musicImageActive from '../assets/img/button-music-active.jpg';
-// import  rapImage from '../assets/img/button-rap.jpg';
-// import  rapImageActive from '../assets/img/button-rap-active.jpg';
-// import  skateImage from '../assets/img/button-skate.jpg';
-// import  skateImageActive from '../assets/img/button-skate-active.jpg';
 import  deuspiImage from '../assets/img/deuspi-visual.png';
 
 let category;
@@ -16,121 +10,11 @@ function setCategory(data) {
     let index = Math.floor(Math.random() * Object.keys(data).length);
     
     category = Object.keys(data)[index];
-    
-    // switch (index) {
-    //     case 0:
-    //         category = "music";
-    //         break;
-    //     case 1:
-    //         category = "rap";
-    //         break;
-    //     case 2:
-    //         category = "skate";
-    //         break;
-    //     default:
-    //         break;
-    // }
-    // setActive();
 }
-
-// function setActive() {
-//     let categoryImages = document.querySelectorAll('#category-container img');
-
-//     categoryImages.forEach(element => {
-//         if (element.classList.contains("category-active")) {
-//             // remove active status
-//             element.classList.remove("category-active");
-
-//             // remove active image
-//             switch (element.id) {
-//                 case "category-music":
-//                     element.src = musicImage;
-//                     break;
-//                 case "category-rap":
-//                     element.src = rapImage;
-//                     break;
-//                 case "category-skate":
-//                     element.src = skateImage;
-//                     break;
-//                 default:
-//                     break;
-//             }
-//         }
-//     });
-
-//     // add active class
-//     categoryImages.forEach(element => {
-//         if (element.id.includes("category-" + category)) {
-//             element.classList.add("category-active");
-
-//             switch (element.id) {
-//                 case "category-music":
-//                     element.src = musicImageActive;
-//                     break;
-//                 case "category-rap":
-//                     element.src = rapImageActive;
-//                     break;
-//                 case "category-skate":
-//                     element.src = skateImageActive;
-//                     break;
-//                 default:
-//                     break;
-//             }
-//         }
-//     });
-// }
-
-// function handleMouseOver(e) {
-//     switch (e.target.id) {
-//         case "category-music":
-//             e.target.src = musicImageActive;
-//             break;
-//         case "category-rap":
-//             e.target.src = rapImageActive;
-//             break;
-//         case "category-skate":
-//             e.target.src = skateImageActive;
-//             break;
-//         default:
-//             break;
-//     }
-// }
-
-// function handleMouseOut(e) {
-//     if (!e.target.classList.contains("category-active")) {
-//         switch (e.target.id) {
-//             case "category-music":
-//                 e.target.src = musicImage;
-//                 break;
-//             case "category-rap":
-//                 e.target.src = rapImage;
-//                 break;
-//             case "category-skate":
-//                 e.target.src = skateImage;
-//                 break;
-//             default:
-//                 break;
-//         }
-//     }
-// }
 
 function setRandomId(data) {
     // set data category
     let dataCategory = data[category];
-
-    // switch (category) {
-    //     case "music":
-    //         dataCategory = data.music;
-    //         break;
-    //     case "rap":
-    //         dataCategory = data.rap;
-    //         break;
-    //     case "skate":
-    //         dataCategory = data.skate;
-    //         break;
-    //     default:
-    //         break;
-    // }
 
     // set video index
     let videoIndex;
@@ -205,8 +89,6 @@ class VideoPlayer extends React.Component {
         this.onPauseVideo = this.onPauseVideo.bind(this);
         this.onRandomVideo = this.onRandomVideo.bind(this);
         this.onUpdateVideo = this.onUpdateVideo.bind(this);
-        // this.onChangeCategory = this.onChangeCategory.bind(this);
-        // this.onShowVideoPlayer = this.onShowVideoPlayer.bind(this);
     }
 
     onReady(event) {
@@ -245,30 +127,12 @@ class VideoPlayer extends React.Component {
                 const videoPlayer = document.getElementById("video-player");
                 const videoIframe = videoPlayer.children[0].children[0];
 
-                // const categoryMusicElement = document.getElementById("category-music");
-                // const categoryRapElement = document.getElementById("category-rap");
-                // const categorySkateElement = document.getElementById("category-skate");
-
-
                 logoContainer.classList.add("fade-out");
                 logoContainer.addEventListener("animationend", () => {
                     logoContainer.classList.add("hide");
                 });
 
                 videoIframe.classList.add("fade-in");
-                videoIframe.addEventListener("animationend", () => {
-                    // categoryMusicElement.style.opacity = 1;
-                    // categoryRapElement.style.opacity = 1;
-                    // categorySkateElement.style.opacity = 1;
-
-                    // categoryMusicElement.classList.remove("fade-in");
-                    // categoryRapElement.classList.remove("fade-in");
-                    // categorySkateElement.classList.remove("fade-in");
-                });
-
-                // categoryMusicElement.classList.add("fade-in");
-                // categoryRapElement.classList.add("fade-in");
-                // categorySkateElement.classList.add("fade-in");
             }
 
             this.showPlayer = true;
@@ -297,28 +161,6 @@ class VideoPlayer extends React.Component {
         });
     }
 
-    // onChangeCategory(e) {
-    //     category = e.target.id.substring(9);
-
-    //     new Promise((resolve, reject) => {
-    //         resolve();
-    //     }).then(() => {
-    //         setActive();
-    //     }).then(() => {
-    //         this.onUpdateVideo();
-    //     }).catch(() => {
-
-    //     }).finally(() => {
-
-    //     });
-    // }
-
-    // onShowVideoPlayer() {
-    //     document.getElementById("video-container").classList.add("embed-responsive-16by9");
-    //     document.getElementById("logo-container").classList.add("hide");
-    //     document.getElementById("video-player").classList.remove("hide");
-    // }
-
     render() {
         const opts = {
             width: "640",
@@ -343,11 +185,6 @@ class VideoPlayer extends React.Component {
                         <YouTube videoId={this.state.videoId} className="random-video" ref={this.youtubePlayerRef} opts={opts} onReady={this.onReady} onEnd={this.onEnd}/>
                     </div>
                 </div>
-                {/* <div id="category-container" className="embed-responsive">
-                    <button onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img id="category-music" className="category-image mt-3" src={musicImage}  width="178" height="33" alt="music category"/></button>
-                    <button onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img id="category-rap" className="category-image mt-3" src={rapImage} width="178" height="33" alt="rap category"/></button>
-                    <button onClick={this.onChangeCategory} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img id="category-skate" className="category-image mt-3" src={skateImage} width="178" height="33" alt="skate category"/></button>
-                </div> */}
                 <RandomButton onClick={this.onUpdateVideo} />
             </div>
         );

@@ -13,20 +13,6 @@ let data = [];
 
 function parseData(appData) {
   JSON.parse(appData).forEach(element => {
-    // switch (element.category) {
-    //   case "MUSIC":
-    //     dataOld.music.push(element);
-    //     break;
-    //   case "RAP":
-    //     dataOld.rap.push(element);
-    //     break;
-    //   case "SKATE":
-    //     dataOld.skate.push(element);
-    //     break;
-    //   default:
-    //     break;
-    // }
-    
     new Promise((resolve, reject) => {
       resolve();
     }).then(() => {
