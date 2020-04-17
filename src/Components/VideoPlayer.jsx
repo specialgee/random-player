@@ -120,7 +120,7 @@ function handleMouseOut(e) {
 
 function setRandomId(data) {
     // set data category
-    let dataCategory;
+    let dataCategory = data[category];
 
     switch (category) {
         case "music":
