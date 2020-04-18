@@ -112,9 +112,11 @@
 }
 
 #video-button-container {
-  position: relative;
-  top: 5vh;
-  z-index: 2;
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  bottom: 18vh;
 }
 
 #video-button {
@@ -174,7 +176,7 @@
   }
   
   #video-button-container {
-    top: 8vh;
+    bottom: 30vh;
   }
 
   #video-button-img {
@@ -219,9 +221,7 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
-  #video-button-container {
-    top: 9vh;
-  }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1366px and up) */
