@@ -1,8 +1,10 @@
 random-player
 ---
 
-Random Youtube Video Player
+DEPRECATED ⛔️ 
+Project moved to [Donats](https://github.com/specialgee/donats) 
 
+Random Youtube Video Player
 See [random-player-server](https://github.com/specialgee/random-player-server) for the back-end implementation.
 
 ## Available Scripts
